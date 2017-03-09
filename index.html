@@ -6801,6 +6801,58 @@ body {
     padding:0px;
 }
 
+.slideUp{
+	animation-name: slideUp;
+	-webkit-animation-name: slideUp;	
+
+	animation-duration: 2s;	
+	-webkit-animation-duration: 2s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;
+
+	visibility: visible !important;			
+}
+
+@keyframes slideUp {
+	0% {
+		transform: translateY(100%);
+
+	}
+	100%{
+		transform: translateY(0%);
+
+	}	
+}
+
+@-webkit-keyframes slideUp {
+	0% {
+		-webkit-transform: translateY(100%);
+
+	}
+	100%{
+		-webkit-transform: translateY(0%);
+
+	}
+}
+
+
+/* linksSlideUp */
+
+.linksSlideUp{
+	animation-name: slideUp;
+	-webkit-animation-name: slideUp;	
+
+	animation-duration: 3s;	
+	-webkit-animation-duration: 3s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;
+
+	visibility: visible !important;			
+}
+
+
 
 /* 
  * FadeShow jQuery Plugin
@@ -6821,7 +6873,7 @@ div.fadeShow-container{position:relative;width:100%;height:100%;background:#1818
 
 
 </head>
-<body style="overflow-x: hidden;">
+<body id="body" style="overflow-x: hidden;">
 
 
 
@@ -6864,9 +6916,9 @@ div.fadeShow-container{position:relative;width:100%;height:100%;background:#1818
 
 <div id="home" class="container-fluid" style="overflow: hidden;">
 
-<div class="" style="font-size: 6rem; margin-top: 0px; padding: 2%; background-color: white; opacity: 0.75; line-height: 1.1; margin: 2%; margin-left: 0px;"';><div id="text"></div></div>
+<div class="slideUp" style="font-size: 6rem; margin-top: 0px; padding: 2%; background-color: white; opacity: 0.75; line-height: 1.1; margin: 2%; margin-left: 0px;"';>Rice Ravens FTC Team</div>
 
-<div class="" style="font-size: 2rem; margin-top: 0px; padding: 2%; background-color: white; opacity: 0.75; margin: 2%; margin-left: 0px;">
+<div class="linksSlideUp" style="font-size: 2rem; margin-top: 0px; padding: 2%; background-color: white; opacity: 0.75; margin: 2%; margin-left: 0px;">
 <div id="text2">
 
 The mission of the Rice Ravens FTC Team is to successfully participate in the FTC robotics tournament while demonstarting gracious professionalism. 
@@ -7705,26 +7757,7 @@ document.getElementById("slideshow").style.height = hig + "px";
 
 </script>
 
-<script>
 
-var string = "Rice Ravens FTC Team"; /* type your text here */
-var array = string.split("");
-var timer;
-
-function frameLooper () {
-	if (array.length > 0) {
-		document.getElementById("text").innerHTML += array.shift();
-	} else {
-		clearTimeout(timer);
-			}
-	loopTimer = setTimeout('frameLooper()',70); /* change 70 for speed */
-
-}
-frameLooper();
-
-window.onload = frameLooper();
-
-</script>
 
 
 </body>
