@@ -1,0 +1,1187 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rice Ravens FTC Team</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+!function(a,b,c){"undefined"!=typeof module&&module.exports?module.exports=c():a[b]=c()}(this,"verge",function(){function a(){return{width:k(),height:l()}}function b(a,b){var c={};return b=+b||0,c.width=(c.right=a.right+b)-(c.left=a.left-b),c.height=(c.bottom=a.bottom+b)-(c.top=a.top-b),c}function c(a,c){return a=a&&!a.nodeType?a[0]:a,a&&1===a.nodeType?b(a.getBoundingClientRect(),c):!1}function d(b){b=null==b?a():1===b.nodeType?c(b):b;var d=b.height,e=b.width;return d="function"==typeof d?d.call(b):d,e="function"==typeof e?e.call(b):e,e/d}var e={},f="undefined"!=typeof window&&window,g="undefined"!=typeof document&&document,h=g&&g.documentElement,i=f.matchMedia||f.msMatchMedia,j=i?function(a){return!!i.call(f,a).matches}:function(){return!1},k=e.viewportW=function(){var a=h.clientWidth,b=f.innerWidth;return b>a?b:a},l=e.viewportH=function(){var a=h.clientHeight,b=f.innerHeight;return b>a?b:a};return e.mq=j,e.matchMedia=i?function(){return i.apply(f,arguments)}:function(){return{}},e.viewport=a,e.scrollX=function(){return f.pageXOffset||h.scrollLeft},e.scrollY=function(){return f.pageYOffset||h.scrollTop},e.rectangle=c,e.aspect=d,e.inX=function(a,b){var d=c(a,b);return!!d&&d.right>=0&&d.left<=k()},e.inY=function(a,b){var d=c(a,b);return!!d&&d.bottom>=0&&d.top<=l()},e.inViewport=function(a,b){var d=c(a,b);return!!d&&d.bottom>=0&&d.right>=0&&d.top<=l()&&d.left<=k()},e});
+</script><script>
+/* FadeShow - By Erik Terwan - This plugin is provided as-is and released under the terms of the MIT license. */
+!function(e){e.fn.fadeShow=function(t){function n(){return c.append("<div class='fadeShow-container'></div>"),e.each(s.images,function(t){e(".fadeShow-container",c).append(i(this,t));var n=c.find(".fadeShow-slide"+t);d.push(n)}),setInterval(a,s.speed),s.correctRatio&&("function"==typeof _&&"undefined"!=typeof _.debounce?e(window).resize(_.debounce(function(){var e=f-1;0>e&&(e=d.length-1),o(d[e])},50)):e(window).resize(function(){var e=f-1;0>e&&(e=d.length-1),o(d[e])})),s.shuffle&&(d=r(d)),a(),setTimeout(function(){o(e(".fadeShow-container .active")),setTimeout(function(){o(e(".fadeShow-container .active"))},300)},50),c}function i(e,t){return"<div class='image fadeShow-slide"+t+"' style='background-image: url("+e+");'><img src='"+e+"' alt='' /></div>"}function a(){e.each(d,function(t){f==t?(o(this),e(this).addClass("active").removeClass("inactive")):e(this).removeClass("active").addClass("inactive")}),f++,f>=d.length&&(f=0)}function o(t){var n=parseInt(c.width())/parseInt(c.height()),i=100/parseInt(e("img",t).height());i>n?t.addClass("fillHeight"):t.removeClass("fillHeight")}function r(e){for(var t=e.length-1;t>0;t--){var n=Math.floor(Math.random()*(t+1)),i=e[t];e[t]=e[n],e[n]=i}return e}var s=e.extend({images:null,speed:8e3,startAtSlide:0,correctRatio:!1,shuffle:!1},t),c=this,d=new Array,f=s.startAtSlide;return n()}}(jQuery);
+</script>
+
+
+<style>
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+}
+#wrapper {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+#home {
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    background-image:    url(images/no-mans-sky-concept-art.png);
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center;   
+}
+
+#map {
+    margin:0px;
+    padding:0px;
+}
+
+.slideUp{
+	animation-name: slideUp;
+	-webkit-animation-name: slideUp;	
+
+	animation-duration: 2s;	
+	-webkit-animation-duration: 2s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;
+
+	visibility: visible !important;			
+}
+
+@keyframes slideUp {
+	0% {
+		transform: translateY(100%);
+
+	}
+	100%{
+		transform: translateY(0%);
+
+	}	
+}
+
+@-webkit-keyframes slideUp {
+	0% {
+		-webkit-transform: translateY(100%);
+
+	}
+	100%{
+		-webkit-transform: translateY(0%);
+
+	}
+}
+
+
+/* linksSlideUp */
+
+.linksSlideUp{
+	animation-name: slideUp;
+	-webkit-animation-name: slideUp;	
+
+	animation-duration: 3s;	
+	-webkit-animation-duration: 3s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;
+
+	visibility: visible !important;			
+}
+
+.navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
+    color: #9d9d9d !important;
+}
+
+
+
+</style>
+
+
+
+
+
+
+
+
+</head>
+<body id="body" style="overflow-x: hidden;">
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top" id="totalnav">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Rice Ravens FTC</a>
+    </div>
+    <div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a style="font-size: 14px;" href="#home" class="link">Home</a></li>
+          <li><a style="font-size: 14px;" href="#who" class="link">Who?</a></li>
+          <li><a style="font-size: 14px;" href="#members" class="link">Members</a></li>
+          <li><a style="font-size: 14px;" href="#sponsorship" class="link">Sponsorship</a></li>
+          <li><a style="font-size: 14px;" href="#photos" class="link">Photos</a></li>
+          <li><a style="font-size: 14px;" href="#contact" class="link">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+
+
+
+<div id="wrapper" style="width:100%; position: relative;" data-target="#myNavbar">
+
+<div id="heighter"></div>
+
+
+<div id="home" class="container-fluid" style="overflow: hidden;">
+
+<div class="slideUp" style="font-size: 6rem; margin-top: 0px; padding: 2%; background-color: white; opacity: 0.75; line-height: 1.1; margin: 2%; margin-left: 0px;"';>Rice Ravens FTC Team</div>
+
+<div class="linksSlideUp" style="font-size: 2rem; margin-top: 0px; padding: 2%; background-color: white; opacity: 0.75; margin: 2%; margin-left: 0px;">
+<div id="text2">
+
+The mission of the Rice Ravens FTC Team is to successfully participate in the FTC robotics tournament while demonstarting gracious professionalism. 
+In this team, we strive to learn from our experiences and demonstrate core values. We explore in the areas we have yet to know and gain from them.
+We enjoy being part of this team.
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div id="who" class="container-fluid" style="overflow: hidden;">
+  <h1>Who?</h1>
+  <h3>Who are we? What do we do?</h3>
+  <p>We are a middle school robotics team that particpates in the annual <i>First Tech Challenge</i>.</p>
+<br>
+
+
+
+
+
+
+<blockquote>
+<p>
+<i>"<strong>It’s way more than building robots.</strong> FIRST Tech Challenge teams (10+ members, grades 7-12) are challenged to design, build, program, and operate robots to compete in a head-to-head challenge in an alliance format. Participants call it “the hardest fun you’ll ever have!” Guided by adult Coaches and Mentors, students develop STEM skills and practice engineering principles (like keeping an engineering notebook), while realizing the value of hard work, innovation, and sharing ideas. The robot kit is reusable from year-to-year and can be programmed using a variety of languages, including Java. Teams also must raise funds, design and market their team brand, and do community outreach for which they can win awards. Participants have access to tens of millions of dollars in college scholarships. Each season concludes with Super-Regional Championships and an exciting FIRST Championship."</i>
+</p>
+<footer>From firstinspires.org</footer>
+</blockquote>
+<br>
+
+<p>For us, this is <i>fun</i>. We typically have after-school weekly meetings to collaborate on our common goal.</p>
+
+<br>
+<h3>Game</h3>
+<br>
+<blockquote>
+<p>
+<i>"The playing field for the Game consists of the FIRST Tech Challenge game pieces set up on a foam-mat surface, surrounded by a metal and polycarbonate Field frame. Each Tournament features Alliances, which are comprised of two Teams, competing against one another on the playing field. Teams work to overcome obstacles and meet challenges, while learning from, and interacting with their peers and adult Mentors. Students develop a greater appreciation of science and technology and how they might use that knowledge to impact the world around them in a positive manner."</i>
+</p>
+<footer>From firstinspires.org</footer>
+</blockquote>
+
+<p>The 2016-2017 First Tech Challenge challenges students to create a robot which can: <i>Input stuff here</i><br>
+Full details can be found on these videos: <a href="https://www.youtube.com/watch?v=A_e5r1lXraY">https://www.youtube.com/watch?v=A_e5r1lXraY</a> and <a href="https://www.youtube.com/embed/iQLrcQbm8cg">https://www.youtube.com/embed/iQLrcQbm8cg</a>
+</p>
+
+
+
+</div>
+
+
+
+
+<div id="members" class="container-fluid" style="overflow: hidden; background-color: #eceeef">
+  <h1>Members</h1>
+  <p style="line-height: 1.4">Of the 2016-2017 team</p>
+
+
+<div class="static-background" style="margin-right: -15px; margin-left: -15px;" id="parallel"></div>
+
+<table class="table table-responsive table-bordered" style="width: 100%; margin-right: 15px; margin-left: -15px; position: absolute;"><tr><td style="padding-right: 8px;">
+<table class="table table-responsive table-hover table-bordered">
+<thread>
+<tr>
+<td>First name</td>
+<td>Last name</td>
+<td>What they did</td>
+</tr></thread><tbody>
+<tr>
+<td>First name</td>
+<td>Last name</td>
+<td>What they did</td>
+</tr>
+<tr>
+<td>First name</td>
+<td>Last name</td>
+<td>What they did</td>
+</tr>
+<tr>
+<td>First name</td>
+<td>Last name</td>
+<td>What they did</td>
+</tr>
+<tr>
+<td>First name</td>
+<td>Last name</td>
+<td>What they did</td>
+</tr></tbody></table>
+</td>
+
+
+
+
+<td style="padding-left: 8px;">
+<table class="table table-responsive table-hover table-bordered">
+<thread>
+<tr>
+<td>First name</td>
+<td>Last name</td>
+<td>What they did</td>
+</tr></thread><tbody>
+<tr>
+<td>First name</td>
+<td>Last name</td>
+<td>What they did</td>
+</tr>
+<tr>
+<td>First name</td>
+<td>Last name</td>
+<td>What they did</td>
+</tr>
+<tr>
+<td>First name</td>
+<td>Last name</td>
+<td>What they did</td>
+</tr>
+<tr>
+<td>First name</td>
+<td>Last name</td>
+<td>What they did</td>
+</tr></tbody></table>
+</td></tr></table>
+</div>
+
+
+<style id="style">
+.static-background {
+    background-image: url("images/untitled.png");
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 600px; 
+}
+.content-container {
+    height: 1200px;
+}
+
+
+
+
+
+@-webkit-keyframes sway {
+
+
+	0%{
+
+		top:50%;
+
+		-webkit-transform: rotateX(-20deg);
+
+        transform: rotateX(-20deg);
+
+	}
+
+
+
+	3%{
+
+		 margin-left: -2%;
+
+		     -webkit-transform: rotateX(-80deg);
+
+          transform: rotateX(-80deg);
+
+	}
+
+
+
+	7% {
+
+		margin-left:1%
+
+		 -webkit-transform: rotateX(-170deg);
+
+          transform: rotateX(-170deg);
+
+	}
+
+  10% {
+
+    margin-left: 2%;
+
+	  -webkit-transform: rotateX(-230deg);
+
+          transform: rotateX(-230deg);
+
+     }
+
+   16% {
+
+   		margin-left: 5%;
+
+   	    	  -webkit-transform: rotateX(-250deg);
+
+          transform: rotateX(-250deg);
+
+   }
+
+   22% {
+
+   	 margin-left: 3%;
+
+   		    -webkit-transform: rotateX(-280deg);
+
+          transform: rotateX(-280deg);
+
+   }
+
+
+
+  28% {
+
+    margin-left: 0%;
+
+    	  -webkit-transform: rotateX(-300deg);
+
+          transform: rotateX(-300deg);
+
+     }
+
+
+
+  35% {
+
+  	margin-left: 3.5%;
+
+  	  -webkit-transform: rotateX(-310deg);
+
+          transform: rotateX(-310deg);
+
+  }
+
+
+
+  48% {
+
+    margin-left: 1%;
+
+     -webkit-transform: rotateX(-350deg);
+
+          transform: rotateX(-350deg);
+
+     }
+
+
+
+   58% {
+
+   	margin-left: 3.5%;
+
+   	 -webkit-transform: rotateX(-310deg);
+
+          transform: rotateX(-310deg);
+
+   }
+
+
+
+   70%{
+
+   		margin-left: 0.5%;
+
+   	   	 -webkit-transform: rotateX(-280deg);
+
+          transform: rotateX(-280deg);
+
+   }
+
+
+
+  83% {
+
+    margin-left: -2%;
+
+     -webkit-transform: rotateX(-230deg);
+
+          transform: rotateX(-230deg);
+
+
+
+}
+
+
+
+  95% {
+
+    margin-left: 2%;
+
+  -webkit-transform: rotateX(-200deg);
+
+          transform: rotateX(-200deg);
+
+     }
+
+
+
+  100% {
+
+    margin-left: 3%;
+
+    top: 67%; } 
+
+}
+
+
+
+
+
+span.billsBillsBills {
+
+  padding: 5px;
+
+  display: block;
+
+  position: absolute;
+
+  z-index: 100;
+
+  -webkit-animation: sway 30s ease-out;
+
+  animation: sway 30s ease-out;
+
+   }
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+</style>
+
+
+<div id="sponsorship" class="container-fluid" style="overflow: hidden;" style="color: white">
+  <h1 style="color: white">Sponsorship</h1>
+  <p style="color: white">The success of Rice Ravens FTC Team is dependent on the contributions from generous donors and sponsors. A investment is highly benifical to the team and is supporting a cause that we believe in.<b> Sponsorships help us to buy materials and parts</b>.<br>
+  We are seeking sponsorships and donations from several entities and private citizens. See the sponsorship packet to learn more about how you can support and sponsor out team.
+</p>
+  
+  <button id="button" class="button button2">Click Me for Animation</button>
+
+  <p style="color: white">Our success thus far could not have been possible without the help of our sponsors below</p>
+<br><br><br>
+<img src="images/dell.png" style="width:10%; height: auto; background-color: '';"></img><br><br>
+<img src="images/google.png" style="width:10%; height: auto;"></img>
+</div>
+
+
+
+<div id="slideshow" class="container-fluid" style="overflow: hidden; position: absolute; width:100%; padding-left: 0px; margin: 0px; z-index: -1;">
+<img src="images/1.jpg" style="width:100%; height:auto;"></img>
+<img src="images/2.jpg" style="width:100%; height:auto;"></img>
+<img src="images/3.jpg" style="width:100%; height:auto;"></img>
+</div>
+
+
+
+<div id="photos" class="container-fluid" style="overflow: hidden;">
+
+
+
+
+    <div class="container">
+
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog" style="width: 75%;">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <center><img id="galleryimg" src="" style="width: auto; min-height: 1000px; max-height: 1500px;"></img></center>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog" style="width: 75%;">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <center><video style="width: auto; min-height: 1000px; max-height: 1500px;" controls><source id="videosrc" src="" id="galleryimg"></source></video></center>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+        <div class="row">
+
+
+
+            <div class="col-lg-12">
+
+                <h1 class="page-header">Gallery</h1>
+		<p>Over the course of our team, we took many photos and videos to remember our experiences</p>
+
+            </div>
+
+
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+
+                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery1.jpg'">
+
+                    <img class="img-responsive" src="images/thumb/Gallery1.jpg" id="firstphoto" style="height: 100%; width: auto;">
+
+                </a>
+
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+
+                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery2.jpg'">
+
+                    <img class="img-responsive" src="images/thumb/Gallery2.jpg" alt="">
+
+                </a>
+
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+
+                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery3.jpg'">
+
+                    <img class="img-responsive" src="images/thumb/Gallery3.jpg" alt="">
+
+                </a>
+
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+
+                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery4.jpg'">
+
+                    <img class="img-responsive" src="images/thumb/Gallery4.jpg" alt="">
+
+                </a>
+
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+
+                <a class="thumbnail" data-target="#myModal2" data-toggle="modal" onclick="document.getElementById('videosrc').src='images/Gallery5.mp4'">
+
+                    <img class="img-responsive" src="images/thumb/Gallery5.jpg" alt="">
+
+                </a>
+
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+
+                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery4.jpg'">
+
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+
+                </a>
+
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+
+                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery4.jpg'">
+
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+
+                </a>
+
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+
+                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery4.jpg'">
+
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+
+                </a>
+
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+
+                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery4.jpg'">
+
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+
+                </a>
+
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+
+                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery4.jpg'">
+
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+
+                </a>
+
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+
+                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery4.jpg'">
+
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+
+                </a>
+
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+
+                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery4.jpg'">
+
+                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
+
+                </a>
+
+            </div>
+
+        </div>
+<div>
+<p>Videos can be found on our youtube channel, <a href="https://www.youtube.com/channel/UCkxa9w-kGn4Z9GjPIIhufYQ">https://www.youtube.com/channel/UCkxa9w-kGn4Z9GjPIIhufYQ</a>.
+
+</div>
+</div></div>
+
+
+<div id="contact" class="container-fluid" style="overflow: hidden;">
+<span style="position: absolute; z-index:1; padding: 0px; margin: 0px; bottom: 15px; right: 15px; border-style: solid; border-width: 5px; border-radius: 8px;" class="panel panel-default">
+<div class="panel-body">
+  <h1>Contact</h1>
+  <p>If you have any questions, queries, doubts, or comments, don't hesitate to contact us.</p>
+
+
+					<br><br>
+					ricerobotics.pisd.edu
+					<br><br>
+					riceroboticsclub@gmail.com
+					<br><br>
+					Rice FTC Robotics		<br>
+					Mr. McCarthy		<br>
+					8500 Gifford Dr 		<br>
+					Rice Middle School 	<br>
+					Plano, TX 75025
+</div>
+</span>
+<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3342.5956139772156!2d-96.76212708386455!3d33.09342188087762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c3d4359213b13%3A0xcad1355d9450d13f!2sRice+Middle+School!5e0!3m2!1sen!2sus!4v1488820024634" frameborder="0" style="border: 0; width:100%; position: absolute;" allowfullscreen></iframe>
+
+<script>
+
+
+
+    elements = document.getElementsByClassName("img-responsive");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.height = $('#firstphoto').height() + 'px';
+    }
+
+
+
+
+$.fn.makeItRain = function(){
+
+
+
+		$(this).on('click',function(){
+
+
+
+			var maxBills = 50;
+
+
+
+
+
+			for (var i = 0; i < maxBills; i++){
+
+
+
+			var random = $(window).width();
+
+
+
+			var randomPosition = Math.floor(random*Math.random());
+
+
+
+			var randomTime = Math.random() * 20;
+
+			var randomSpeed = (Math.random()*20)+10 ;
+
+
+
+
+
+			var bills = $("<span class='billsBillsBills'>")
+
+				.css({
+
+					left : randomPosition,
+
+					top: '-150px',
+
+					"-webkit-animation-delay" : randomTime + "s",
+
+					"-webkit-animation-duration" : randomSpeed + "s"
+
+				});
+
+
+
+				$(bills).prepend('<img src="images/bill.svg" alt="a dollar bill">');
+
+
+
+
+
+				$('#wrapper').append(bills);
+
+
+
+			}; // end click function
+
+
+
+		}); //end for loop
+
+
+
+	}; //end make it rain fn.
+
+
+
+	// thanks to Anisha Varghese from the Noun Project for the SVG!!
+
+
+
+$('#button').makeItRain();
+
+/*!
+ * jQuery Cycle Lite Plugin
+ * http://malsup.com/jquery/cycle/lite/
+ * Copyright (c) 2008-2012 M. Alsup
+ * Version: 1.7 (20-FEB-2013)
+ * Dual licensed under the MIT and GPL licenses:
+ * http://www.opensource.org/licenses/mit-license.php
+ * http://www.gnu.org/licenses/gpl.html
+ * Requires: jQuery v1.3.2 or later
+ */
+;(function($) {
+"use strict";
+
+var ver = 'Lite-1.7';
+var msie = /MSIE/.test(navigator.userAgent);
+
+$.fn.cycle = function(options) {
+    return this.each(function() {
+        options = options || {};
+        
+        if (this.cycleTimeout) 
+            clearTimeout(this.cycleTimeout);
+
+        this.cycleTimeout = 0;
+        this.cyclePause = 0;
+        
+        var $cont = $(this);
+        var $slides = options.slideExpr ? $(options.slideExpr, this) : $cont.children();
+        var els = $slides.get();
+        if (els.length < 2) {
+            if (window.console)
+                console.log('terminating; too few slides: ' + els.length);
+            return; // don't bother
+        }
+
+        // support metadata plugin (v1.0 and v2.0)
+        var opts = $.extend({}, $.fn.cycle.defaults, options || {}, $.metadata ? $cont.metadata() : $.meta ? $cont.data() : {});
+        var meta = $.isFunction($cont.data) ? $cont.data(opts.metaAttr) : null;
+        if (meta)
+            opts = $.extend(opts, meta);
+            
+        opts.before = opts.before ? [opts.before] : [];
+        opts.after = opts.after ? [opts.after] : [];
+        opts.after.unshift(function(){ opts.busy=0; });
+            
+        // allow shorthand overrides of width, height and timeout
+        var cls = this.className;
+        opts.width = parseInt((cls.match(/w:(\d+)/)||[])[1], 10) || opts.width;
+        opts.height = parseInt((cls.match(/h:(\d+)/)||[])[1], 10) || opts.height;
+        opts.timeout = parseInt((cls.match(/t:(\d+)/)||[])[1], 10) || opts.timeout;
+
+        if ($cont.css('position') == 'static') 
+            $cont.css('position', 'relative');
+        if (opts.width) 
+            $cont.width(opts.width);
+        if (opts.height && opts.height != 'auto') 
+            $cont.height(opts.height);
+
+        var first = 0;
+        $slides.css({position: 'absolute', top:0}).each(function(i) {
+            $(this).css('z-index', els.length-i);
+        });
+        
+        $(els[first]).css('opacity',1).show(); // opacity bit needed to handle reinit case
+        if (msie) 
+            els[first].style.removeAttribute('filter');
+
+        if (opts.fit && opts.width) 
+            $slides.width(opts.width);
+        if (opts.fit && opts.height && opts.height != 'auto') 
+            $slides.height(opts.height);
+        if (opts.pause) 
+            $cont.hover(function(){this.cyclePause=1;}, function(){this.cyclePause=0;});
+
+        var txFn = $.fn.cycle.transitions[opts.fx];
+        if (txFn)
+            txFn($cont, $slides, opts);
+        
+        $slides.each(function() {
+            var $el = $(this);
+            this.cycleH = (opts.fit && opts.height) ? opts.height : $el.height();
+            this.cycleW = (opts.fit && opts.width) ? opts.width : $el.width();
+        });
+
+        if (opts.cssFirst)
+            $($slides[first]).css(opts.cssFirst);
+
+        if (opts.timeout) {
+            // ensure that timeout and speed settings are sane
+            if (opts.speed.constructor == String)
+                opts.speed = {slow: 600, fast: 200}[opts.speed] || 400;
+            if (!opts.sync)
+                opts.speed = opts.speed / 2;
+            while((opts.timeout - opts.speed) < 250)
+                opts.timeout += opts.speed;
+        }
+        opts.speedIn = opts.speed;
+        opts.speedOut = opts.speed;
+
+        opts.slideCount = els.length;
+        opts.currSlide = first;
+        opts.nextSlide = 1;
+
+        // fire artificial events
+        var e0 = $slides[first];
+        if (opts.before.length)
+            opts.before[0].apply(e0, [e0, e0, opts, true]);
+        if (opts.after.length > 1)
+            opts.after[1].apply(e0, [e0, e0, opts, true]);
+        
+        if (opts.click && !opts.next)
+            opts.next = opts.click;
+        if (opts.next)
+            $(opts.next).unbind('click.cycle').bind('click.cycle', function(){return advance(els,opts,opts.rev?-1:1);});
+        if (opts.prev)
+            $(opts.prev).unbind('click.cycle').bind('click.cycle', function(){return advance(els,opts,opts.rev?1:-1);});
+
+        if (opts.timeout)
+            this.cycleTimeout = setTimeout(function() {
+                go(els,opts,0,!opts.rev);
+            }, opts.timeout + (opts.delay||0));
+    });
+};
+
+function go(els, opts, manual, fwd) {
+    if (opts.busy) 
+        return;
+    var p = els[0].parentNode, curr = els[opts.currSlide], next = els[opts.nextSlide];
+    if (p.cycleTimeout === 0 && !manual) 
+        return;
+
+    if (manual || !p.cyclePause) {
+        if (opts.before.length)
+            $.each(opts.before, function(i,o) { o.apply(next, [curr, next, opts, fwd]); });
+        var after = function() {
+            if (msie)
+                this.style.removeAttribute('filter');
+            $.each(opts.after, function(i,o) { o.apply(next, [curr, next, opts, fwd]); });
+            queueNext(opts);
+        };
+
+        if (opts.nextSlide != opts.currSlide) {
+            opts.busy = 1;
+            $.fn.cycle.custom(curr, next, opts, after);
+        }
+        var roll = (opts.nextSlide + 1) == els.length;
+        opts.nextSlide = roll ? 0 : opts.nextSlide+1;
+        opts.currSlide = roll ? els.length-1 : opts.nextSlide-1;
+    } else {
+      queueNext(opts);
+    }
+
+    function queueNext(opts) {
+        if (opts.timeout)
+            p.cycleTimeout = setTimeout(function() { go(els,opts,0,!opts.rev); }, opts.timeout);
+    }
+}
+
+// advance slide forward or back
+function advance(els, opts, val) {
+    var p = els[0].parentNode, timeout = p.cycleTimeout;
+    if (timeout) {
+        clearTimeout(timeout);
+        p.cycleTimeout = 0;
+    }
+    opts.nextSlide = opts.currSlide + val;
+    if (opts.nextSlide < 0) {
+        opts.nextSlide = els.length - 1;
+    }
+    else if (opts.nextSlide >= els.length) {
+        opts.nextSlide = 0;
+    }
+    go(els, opts, 1, val>=0);
+    return false;
+}
+
+$.fn.cycle.custom = function(curr, next, opts, cb) {
+    var $l = $(curr), $n = $(next);
+    $n.css(opts.cssBefore);
+    var fn = function() {$n.animate(opts.animIn, opts.speedIn, opts.easeIn, cb);};
+    $l.animate(opts.animOut, opts.speedOut, opts.easeOut, function() {
+        $l.css(opts.cssAfter);
+        if (!opts.sync)
+            fn();
+    });
+    if (opts.sync)
+        fn();
+};
+
+$.fn.cycle.transitions = {
+    fade: function($cont, $slides, opts) {
+        $slides.not(':eq(0)').hide();
+        opts.cssBefore = { opacity: 0, display: 'block' };
+        opts.cssAfter  = { display: 'none' };
+        opts.animOut = { opacity: 0 };
+        opts.animIn = { opacity: 1 };
+    },
+    fadeout: function($cont, $slides, opts) {
+        opts.before.push(function(curr,next,opts,fwd) {
+            $(curr).css('zIndex',opts.slideCount + (fwd === true ? 1 : 0));
+            $(next).css('zIndex',opts.slideCount + (fwd === true ? 0 : 1));
+        });
+        $slides.not(':eq(0)').hide();
+        opts.cssBefore = { opacity: 1, display: 'block', zIndex: 1 };
+        opts.cssAfter  = { display: 'none', zIndex: 0 };
+        opts.animOut = { opacity: 0 };
+        opts.animIn = { opacity: 1 };
+    }
+};
+
+$.fn.cycle.ver = function() { return ver; };
+
+// @see: http://malsup.com/jquery/cycle/lite/
+$.fn.cycle.defaults = {
+    animIn:        {},
+    animOut:       {},
+    fx:           'fade',
+    after:         null,
+    before:        null,
+    cssBefore:     {},
+    cssAfter:      {},
+    delay:         0,
+    fit:           0,
+    height:       'auto',
+    metaAttr:     'cycle',
+    next:          null,
+    pause:         false,
+    prev:          null,
+    speed:         1000,
+    slideExpr:     null,
+    sync:          true,
+    timeout:       4000
+};
+
+})(jQuery);
+
+$('#slideshow').cycle({ 
+    delay:  0, 
+    timeout: 4000,
+    speed:  1000, 
+}); 
+
+
+
+</script>
+
+<style>
+
+</style>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+$(document).ready(function(){
+  // Add scrollspy to <body>
+  $('body').scrollspy({target: ".navbar", offset: ((verge.viewportH() - document.getElementById("totalnav").offsetHeight) / 2) + document.getElementById("totalnav").offsetHeight});   
+
+  // Add smooth scrolling on all links inside the navbar
+  $("#myNavbar a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+      scrollamount = $(hash).offset().top - document.getElementById("totalnav").offsetHeight;
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({ 
+        scrollTop: scrollamount
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+
+      });
+    }  // End if
+  });
+});
+</script>
+
+
+<script>
+var hig = verge.viewportH() - document.getElementById("totalnav").offsetHeight;
+document.getElementById("wrapper").style.height = (hig * 6) + "px";
+document.getElementById("home").style.height = hig + "px";
+document.getElementById("who").style.height = hig + "px";
+document.getElementById("members").style.height = hig + "px";
+document.getElementById("sponsorship").style.height = hig + "px";
+document.getElementById("photos").style.height = hig + "px";
+document.getElementById("contact").style.height = hig + "px";
+document.getElementById("heighter").style.height = document.getElementById("totalnav").offsetHeight + "px";
+document.getElementById("map").style.height = (verge.viewportH() - document.getElementById("totalnav").offsetHeight) + "px";
+document.getElementById("map").style.top = (((verge.viewportH() - document.getElementById("totalnav").offsetHeight) * 5) + document.getElementById("totalnav").offsetHeight) + "px";
+document.getElementById("map").style.left = "0px";
+document.getElementById("slideshow").style.height = hig + "px";
+document.getElementById("slideshow").style.top = (((verge.viewportH() - document.getElementById("totalnav").offsetHeight) * 3) + document.getElementById("totalnav").offsetHeight) + "px";
+document.getElementById("slideshow").style.left = "0px";
+
+$(window).resize(function() {
+  
+
+var hig = verge.viewportH() - document.getElementById("totalnav").offsetHeight;
+document.getElementById("wrapper").style.height = (hig * 6) + "px";
+document.getElementById("home").style.height = hig + "px";
+document.getElementById("who").style.height = hig + "px";
+document.getElementById("members").style.height = hig + "px";
+document.getElementById("sponsorship").style.height = hig + "px";
+document.getElementById("photos").style.height = hig + "px";
+document.getElementById("contact").style.height = hig + "px";
+
+document.getElementById("heighter").style.height = document.getElementById("totalnav").offsetHeight + "px";
+
+document.getElementById("map").style.height = (verge.viewportH() - document.getElementById("totalnav").offsetHeight) + "px";
+document.getElementById("map").style.top = (((verge.viewportH() - document.getElementById("totalnav").offsetHeight) * 5) + document.getElementById("totalnav").offsetHeight) + "px";
+document.getElementById("map").style.left = "0px";
+
+document.getElementById("slideshow").style.height = (verge.viewportH() - document.getElementById("totalnav").offsetHeight) + "px";
+document.getElementById("slideshow").style.top = (((verge.viewportH() - document.getElementById("totalnav").offsetHeight) * 3) + document.getElementById("totalnav").offsetHeight) + "px";
+document.getElementById("slideshow").style.left = "0px";
+document.getElementById("slideshow").style.height = hig + "px";
+ 
+
+
+
+
+});
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
+

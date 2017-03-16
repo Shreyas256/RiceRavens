@@ -1,0 +1,4 @@
+1.js - automatic image sizing
+2.js - make it rain.js
+3.js - carusosel for image background
+4.js - scrollspy

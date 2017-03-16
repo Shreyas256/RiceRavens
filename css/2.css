@@ -1,0 +1,210 @@
+.static-background {
+    background-image: url("images/untitled.png");
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 600px; 
+}
+.content-container {
+    height: 1200px;
+}
+
+@-webkit-keyframes sway {
+
+
+	0%{
+
+		top:50%;
+
+		-webkit-transform: rotateX(-20deg);
+
+        transform: rotateX(-20deg);
+
+	}
+
+
+
+	3%{
+
+		 margin-left: -2%;
+
+		     -webkit-transform: rotateX(-80deg);
+
+          transform: rotateX(-80deg);
+
+	}
+
+
+
+	7% {
+
+		margin-left:1%
+
+		 -webkit-transform: rotateX(-170deg);
+
+          transform: rotateX(-170deg);
+
+	}
+
+  10% {
+
+    margin-left: 2%;
+
+	  -webkit-transform: rotateX(-230deg);
+
+          transform: rotateX(-230deg);
+
+     }
+
+   16% {
+
+   		margin-left: 5%;
+
+   	    	  -webkit-transform: rotateX(-250deg);
+
+          transform: rotateX(-250deg);
+
+   }
+
+   22% {
+
+   	 margin-left: 3%;
+
+   		    -webkit-transform: rotateX(-280deg);
+
+          transform: rotateX(-280deg);
+
+   }
+
+
+
+  28% {
+
+    margin-left: 0%;
+
+    	  -webkit-transform: rotateX(-300deg);
+
+          transform: rotateX(-300deg);
+
+     }
+
+
+
+  35% {
+
+  	margin-left: 3.5%;
+
+  	  -webkit-transform: rotateX(-310deg);
+
+          transform: rotateX(-310deg);
+
+  }
+
+
+
+  48% {
+
+    margin-left: 1%;
+
+     -webkit-transform: rotateX(-350deg);
+
+          transform: rotateX(-350deg);
+
+     }
+
+
+
+   58% {
+
+   	margin-left: 3.5%;
+
+   	 -webkit-transform: rotateX(-310deg);
+
+          transform: rotateX(-310deg);
+
+   }
+
+
+
+   70%{
+
+   		margin-left: 0.5%;
+
+   	   	 -webkit-transform: rotateX(-280deg);
+
+          transform: rotateX(-280deg);
+
+   }
+
+
+
+  83% {
+
+    margin-left: -2%;
+
+     -webkit-transform: rotateX(-230deg);
+
+          transform: rotateX(-230deg);
+
+
+
+}
+
+
+
+  95% {
+
+    margin-left: 2%;
+
+  -webkit-transform: rotateX(-200deg);
+
+          transform: rotateX(-200deg);
+
+     }
+
+
+
+  100% {
+
+    margin-left: 3%;
+
+    top: 67%; } 
+
+}
+
+
+
+
+
+span.billsBillsBills {
+
+  padding: 5px;
+
+  display: block;
+
+  position: absolute;
+
+  z-index: 100;
+
+  -webkit-animation: sway 30s ease-out;
+
+  animation: sway 30s ease-out;
+
+   }
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+.button2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
