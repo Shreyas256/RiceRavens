@@ -51,24 +51,24 @@ body {
 @keyframes slideUp {
 	0% {
 		transform: translateY(100%);
-
 	}
 	100%{
 		transform: translateY(0%);
-
 	}	
 }
+
 
 @-webkit-keyframes slideUp {
 	0% {
 		-webkit-transform: translateY(100%);
-
 	}
 	100%{
 		-webkit-transform: translateY(0%);
-
 	}
 }
+
+
+
 
 
 /* linksSlideUp */
@@ -137,6 +137,9 @@ body {
 
 <div id="home" class="container-fluid" style="overflow: hidden;">
 
+<script>document.getElementById("home").style.height = (document.documentElement.clientHeight - document.getElementById("totalnav").offsetHeight) + "px";
+</script>
+
 <div class="slideUp" style="font-size: 6rem; margin-top: 0px; padding: 2%; background-color: white; opacity: 0.75; line-height: 1.1; margin: 2%; margin-left: 0px;"';>Rice Ravens FTC Team</div>
 
 <div class="linksSlideUp" style="font-size: 2rem; margin-top: 0px; padding: 2%; background-color: white; opacity: 0.75; margin: 2%; margin-left: 0px;">
@@ -153,7 +156,7 @@ We enjoy being part of this team.
 <div id="who" class="container-fluid" style="overflow: hidden;">
   <h1>Who?</h1>
   <h3>Who are we? What do we do?</h3>
-  <p>We are a middle school robotics team that particpates in the annual <i>First Tech Challenge</i>.</p>
+  <p>We are a robotics team from Rice Middle School that particpates in the annual <i>First Tech Challenge</i>.</p>
 <br>
 
 
@@ -259,6 +262,9 @@ Full details can be found on these videos: <a href="https://www.youtube.com/watc
     background-attachment: fixed;
     background-size: cover;
     min-height: 600px; 
+   -moz-box-shadow:    inset 0 0 50px #000000;
+   -webkit-box-shadow: inset 0 0 50px #000000;
+   box-shadow:         inset 0 0 50px #000000;
 }
 .content-container {
     height: 1200px;
@@ -383,7 +389,6 @@ span.billsBillsBills {
 
 </style>
 
-
 <div id="sponsorship" class="container-fluid" style="overflow: hidden;" style="color: white">
   <h1 style="color: white">Sponsorship</h1>
   <p style="color: white">The success of Rice Ravens FTC Team is dependent on the contributions from generous donors and sponsors. A investment is highly benifical to the team and is supporting a cause that we believe in.<b> Sponsorships help us to buy materials and parts</b>.<br>
@@ -401,10 +406,12 @@ span.billsBillsBills {
 
 
 <div id="slideshow" class="container-fluid" style="overflow: hidden; position: absolute; width:100%; padding-left: 0px; margin: 0px; z-index: -1;">
-<img src="images/1.jpg" style="width:100%; height:auto;"></img>
-<img src="images/2.jpg" style="width:100%; height:auto;"></img>
-<img src="images/3.jpg" style="width:100%; height:auto;"></img>
+<img id="slide1" style="min-width: 100%; min-height: 100%;"></img>
+<img id="slide2" style="min-width: 100%; min-height: 100%;"></img>
+<img id="slide3" style="min-width: 100%; min-height: 100%;"></img>
 </div>
+
+
 
 
 
@@ -425,7 +432,7 @@ span.billsBillsBills {
           <h4 class="modal-title">Modal Header</h4>
         </div>
         <div class="modal-body">
-          <center><img id="galleryimg" src="" style="width: auto; min-height: 1000px; max-height: 1500px;"></img></center>
+          <center><img id="galleryimg" src="" style="width: auto; max-width: 75%; height: auto;"></img></center>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -471,9 +478,9 @@ span.billsBillsBills {
 
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
 
-                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery1.jpg'">
+                <a class="thumbnail" data-target="#myModal" id="firstphoto" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery1.jpg'">
 
-                    <img class="img-responsive" src="images/thumb/Gallery1.jpg" id="firstphoto" style="height: 100%; width: auto;">
+                    <img class="img-responsive" src="images/thumb/Gallery1.jpg" style="max-height: 100%; width: auto !important;"></img>
 
                 </a>
 
@@ -483,7 +490,7 @@ span.billsBillsBills {
 
                 <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery2.jpg'">
 
-                    <img class="img-responsive" src="images/thumb/Gallery2.jpg" alt="">
+                    <img class="img-responsive" src="images/thumb/Gallery2.jpg" style="height: 100% !important; width: auto !important;" alt="">
 
                 </a>
 
@@ -493,7 +500,7 @@ span.billsBillsBills {
 
                 <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery3.jpg'">
 
-                    <img class="img-responsive" src="images/thumb/Gallery3.jpg" alt="">
+                    <img class="img-responsive" src="images/thumb/Gallery3.jpg" style="height: 100% !important; width: auto !important;" alt="">
 
                 </a>
 
@@ -503,7 +510,7 @@ span.billsBillsBills {
 
                 <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery4.jpg'">
 
-                    <img class="img-responsive" src="images/thumb/Gallery4.jpg" alt="">
+                    <img class="img-responsive" src="images/thumb/Gallery4.jpg" style="height: 100% !important; width: auto !important;" alt="">
 
                 </a>
 
@@ -513,7 +520,7 @@ span.billsBillsBills {
 
                 <a class="thumbnail" data-target="#myModal2" data-toggle="modal" onclick="document.getElementById('videosrc').src='images/Gallery5.mp4'">
 
-                    <img class="img-responsive" src="images/thumb/Gallery5.jpg" alt="">
+                    <img class="img-responsive" src="images/thumb/Gallery5.jpg" style="height: 100% !important; width: auto !important;" alt="">
 
                 </a>
 
@@ -597,8 +604,8 @@ span.billsBillsBills {
 </div></div>
 
 
-<div id="contact" class="container-fluid" style="overflow: hidden;">
-<span style="position: absolute; z-index:1; padding: 0px; margin: 0px; bottom: 15px; right: 15px; border-style: solid; border-width: 5px; border-radius: 8px;" class="panel panel-default">
+<div id="contact" class="container-fluid" style="y-overflow: hidden;">
+<span style="position: absolute; z-index:1; padding: 0px; margin: 0px; bottom: 15px; right: 15px; border-style: solid; border-width: 5px; border-radius: 8px; width: 30%;" class="panel panel-default">
 <div class="panel-body">
   <h1>Contact</h1>
   <p>If you have any questions, queries, doubts, or comments, don't hesitate to contact us.</p>
@@ -630,7 +637,6 @@ span.billsBillsBills {
 <script>
 var hig = verge.viewportH() - document.getElementById("totalnav").offsetHeight;
 document.getElementById("wrapper").style.height = (hig * 6) + "px";
-document.getElementById("home").style.height = hig + "px";
 document.getElementById("who").style.height = hig + "px";
 document.getElementById("members").style.height = hig + "px";
 document.getElementById("sponsorship").style.height = hig + "px";
@@ -667,8 +673,8 @@ document.getElementById("slideshow").style.left = "0px";
 
 </script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
  <script src="js/1.js" async></script>
  <script src="js/2.js" async></script>
