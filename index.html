@@ -89,8 +89,28 @@ body {
 .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
     color: #9d9d9d;
 }
+.content-container {
+    height: 1200px;
+}
+@media screen and (max-width: 1070px) {
+  .linksSlideUp, .table, .unneeded, #footer {
+	display: none;
+  }
+.content-container {
+    min-height: 1000px;
+}
+.panel {
+width: 100% !important;
+max-height: 7%;
+margin: 5px !important;
+bottom: 5px !important;
+right: 0px !important;
+}
+#smallscreenwarning {
+    display: initial !important;
+}
 
-
+}
 
 </style>
 
@@ -102,9 +122,10 @@ body {
 
 
 </head>
-<body id="body" style="overflow-x: hidden;">
+<body id="body" style="overflow-x: hidden;">    
+<div id="wrapper" style="width:100%; position: relative;" data-target="#myNavbar">
 
-<nav class="navbar navbar-inverse navbar-fixed-top" id="totalnav">
+<nav class="navbar navbar-inverse navbar-fixed-top" id="totalnav" style="position: fixed;">
   <div class="container-fluid">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -112,7 +133,7 @@ body {
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Rice Ravens FTC</a>
+      <a class="navbar-brand" href="">Rice Ravens FTC</a>
     </div>
     <div>
       <div class="collapse navbar-collapse" id="myNavbar">
@@ -127,10 +148,9 @@ body {
       </div>
     </div>
   </div>
-</nav>    
+</nav>
 
 
-<div id="wrapper" style="width:100%; position: relative;" data-target="#myNavbar">
 
 <div id="heighter"></div>
 
@@ -140,9 +160,9 @@ body {
 <script>document.getElementById("home").style.height = (document.documentElement.clientHeight - document.getElementById("totalnav").offsetHeight) + "px";
 </script>
 
-<div class="slideUp" style="font-size: 6rem; margin-top: 0px; padding: 2%; background-color: white; opacity: 0.75; line-height: 1.1; margin: 2%; margin-left: 0px;"';>Rice Ravens FTC Team</div>
+<div class="slideUp" style="font-size: 6rem; margin-top: 0px; padding: 2%; background-color: white; opacity: 0.75; line-height: 1.1; margin: 2%;">Rice Ravens FTC Team</div>
 
-<div class="linksSlideUp" style="font-size: 2rem; margin-top: 0px; padding: 2%; background-color: white; opacity: 0.75; margin: 2%; margin-left: 0px;">
+<div class="linksSlideUp" style="font-size: 2rem; margin-top: 0px; padding: 2%; background-color: white; opacity: 0.75; margin: 2%;">
 <div id="text2">
 
 The mission of the Rice Ravens FTC Team is to successfully participate in the FTC robotics tournament while demonstarting gracious professionalism. 
@@ -162,7 +182,18 @@ We enjoy being part of this team.
 
 <blockquote>
 <p>
-<i>"<strong>It’s way more than building robots.</strong> FIRST Tech Challenge teams (10+ members, grades 7-12) are challenged to design, build, program, and operate robots to compete in a head-to-head challenge in an alliance format. Participants call it “the hardest fun you’ll ever have!” Guided by adult Coaches and Mentors, students develop STEM skills and practice engineering principles (like keeping an engineering notebook), while realizing the value of hard work, innovation, and sharing ideas. The robot kit is reusable from year-to-year and can be programmed using a variety of languages, including Java. Teams also must raise funds, design and market their team brand, and do community outreach for which they can win awards. Participants have access to tens of millions of dollars in college scholarships. Each season concludes with Super-Regional Championships and an exciting FIRST Championship."</i>
+<i>"<strong>
+It’s way more than building robots.
+</strong> 
+FIRST Tech Challenge teams (10+ members, grades 7-12) are challenged to design, build, program, and operate robots to compete in a head-to-head challenge in an alliance format. 
+<span class="unneeded">Participants call it “the hardest fun you’ll ever have!”</span> 
+Guided by adult Coaches and Mentors, students develop STEM skills and practice engineering principles 
+(like keeping an engineering notebook), while realizing the value of hard work, innovation, and sharing ideas. 
+The robot kit is reusable from year-to-year and can be programmed using a variety of languages, including Java. 
+<span class="unneeded">Teams also must raise funds, design and market their team brand, and do community outreach for which they can win awards. 
+Participants have access to tens of millions of dollars in college scholarships. 
+Each season concludes with Super-Regional Championships and an exciting FIRST Championship.</span>"
+</i>
 </p>
 <footer>From firstinspires.org</footer>
 </blockquote>
@@ -175,7 +206,11 @@ We enjoy being part of this team.
 <br>
 <blockquote>
 <p>
-<i>"The playing field for the Game consists of the FIRST Tech Challenge game pieces set up on a foam-mat surface, surrounded by a metal and polycarbonate Field frame. Each Tournament features Alliances, which are comprised of two Teams, competing against one another on the playing field. Teams work to overcome obstacles and meet challenges, while learning from, and interacting with their peers and adult Mentors. Students develop a greater appreciation of science and technology and how they might use that knowledge to impact the world around them in a positive manner."</i>
+<i>"The playing field for the Game consists of the FIRST Tech Challenge game pieces set up on a foam-mat surface, surrounded by a metal and polycarbonate Field frame. 
+Each Tournament features Alliances, which are comprised of two Teams, competing against one another on the playing field. 
+<span class="unneeded">Teams work to overcome obstacles and meet challenges, while learning from, and interacting with their peers and adult Mentors. </span>
+Students develop a greater appreciation of science and technology and how they might use that knowledge to impact the 
+world around them in a positive manner."</i>
 </p>
 <footer>From firstinspires.org</footer>
 </blockquote>
@@ -193,7 +228,7 @@ Full details can be found on these videos: <a href="https://www.youtube.com/watc
 
 <div class="static-background" style="margin-right: -15px; margin-left: -15px;" id="parallel"></div>
 
-<table class="table table-responsive table-bordered" style="width: 100%; margin-right: 15px; margin-left: -15px; position: absolute;"><tr><td style="padding-right: 8px;">
+<table id="memberstable" class="table table-responsive table-bordered" style="width: 100%; margin-right: 15px; margin-left: -15px; position: absolute;"><tr><td style="padding-right: 8px;">
 <table class="table table-responsive table-hover table-bordered">
 <thread>
 <tr>
@@ -253,22 +288,25 @@ Full details can be found on these videos: <a href="https://www.youtube.com/watc
 <td>What they did</td>
 </tr></tbody></table>
 </td></tr></table>
+
+<div id="smallscreenwarning" style="display: none">There are more members, but they are not visible due to your small screen</div>
+
 </div>
 
 
 <style id="style">
 .static-background {
-    background-image: url("images/untitled.png");
-    background-attachment: fixed;
-    background-size: cover;
+  background: url(images/untitled.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
     min-height: 600px; 
    -moz-box-shadow:    inset 0 0 50px #000000;
    -webkit-box-shadow: inset 0 0 50px #000000;
    box-shadow:         inset 0 0 50px #000000;
 }
-.content-container {
-    height: 1200px;
-}
+
 
 
 @-webkit-keyframes sway {
@@ -386,7 +424,12 @@ span.billsBillsBills {
 .button2:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
-
+#slide1, #slide2, #slide3 {
+margin-left: 50%;
+transform: translateX(-50%);
+min-width: 100%; 
+min-height: 100%;
+}
 </style>
 
 <div id="sponsorship" class="container-fluid" style="overflow: hidden;" style="color: white">
@@ -406,9 +449,9 @@ span.billsBillsBills {
 
 
 <div id="slideshow" class="container-fluid" style="overflow: hidden; position: absolute; width:100%; padding-left: 0px; margin: 0px; z-index: -1;">
-<img id="slide1" style="min-width: 100%; min-height: 100%;"></img>
-<img id="slide2" style="min-width: 100%; min-height: 100%;"></img>
-<img id="slide3" style="min-width: 100%; min-height: 100%;"></img>
+<img id="slide1" />
+<img id="slide2" />
+<img id="slide3" />
 </div>
 
 
@@ -463,7 +506,7 @@ span.billsBillsBills {
     </div>
   </div>
 
-        <div class="row">
+        <div class="row" style="overflow:hidden;">
 
 
 
@@ -471,6 +514,7 @@ span.billsBillsBills {
 
                 <h1 class="page-header">Gallery</h1>
 		<p>Over the course of our team, we took many photos and videos to remember our experiences</p>
+                <p>Videos can be found on our youtube channel, <a href="https://www.youtube.com/channel/UCkxa9w-kGn4Z9GjPIIhufYQ">https://www.youtube.com/channel/UCkxa9w-kGn4Z9GjPIIhufYQ</a>.
 
             </div>
 
@@ -586,7 +630,7 @@ span.billsBillsBills {
 
             </div>
 
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb" id="lastphoto">
 
                 <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery4.jpg'">
 
@@ -596,26 +640,21 @@ span.billsBillsBills {
 
             </div>
 
-        </div>
-<div>
-<p>Videos can be found on our youtube channel, <a href="https://www.youtube.com/channel/UCkxa9w-kGn4Z9GjPIIhufYQ">https://www.youtube.com/channel/UCkxa9w-kGn4Z9GjPIIhufYQ</a>.
-
-</div>
-</div></div>
+</div></div></div>
 
 
 <div id="contact" class="container-fluid" style="y-overflow: hidden;">
-<span style="position: absolute; z-index:1; padding: 0px; margin: 0px; bottom: 15px; right: 15px; border-style: solid; border-width: 5px; border-radius: 8px; width: 30%;" class="panel panel-default">
-<div class="panel-body">
+<span style="position: absolute; z-index:1; padding: 0px; margin: 0px; bottom: 15px; overflow: hidden; right: 15px; border-style: solid; border-width: 5px; border-radius: 8px; width: 30%;" class="panel panel-default">
+<div class="panel-body" style="overflow: hidden">
   <h1>Contact</h1>
   <p>If you have any questions, queries, doubts, or comments, don't hesitate to contact us.</p>
 
 
-					<br><br>
+					<span class="unneeded"><br><br></span>
 					ricerobotics.pisd.edu
-					<br><br>
+					<br><span class="unneeded"><br></span>
 					riceroboticsclub@gmail.com
-					<br><br>
+					<br><span class="unneeded"><br></span>
 					Rice FTC Robotics		<br>
 					Mr. McCarthy		<br>
 					8500 Gifford Dr 		<br>
@@ -637,17 +676,18 @@ span.billsBillsBills {
 <script>
 var hig = verge.viewportH() - document.getElementById("totalnav").offsetHeight;
 document.getElementById("wrapper").style.height = (hig * 6) + "px";
+document.getElementById("home").style.height = hig + "px";
 document.getElementById("who").style.height = hig + "px";
 document.getElementById("members").style.height = hig + "px";
 document.getElementById("sponsorship").style.height = hig + "px";
 document.getElementById("photos").style.height = hig + "px";
 document.getElementById("contact").style.height = hig + "px";
 document.getElementById("heighter").style.height = document.getElementById("totalnav").offsetHeight + "px";
-document.getElementById("map").style.height = (verge.viewportH() - document.getElementById("totalnav").offsetHeight) + "px";
-document.getElementById("map").style.top = (((verge.viewportH() - document.getElementById("totalnav").offsetHeight) * 5) + document.getElementById("totalnav").offsetHeight) + "px";
+document.getElementById("map").style.height = (hig) + "px";
+document.getElementById("map").style.top = (((hig) * 5) + document.getElementById("totalnav").offsetHeight) + "px";
 document.getElementById("map").style.left = "0px";
 document.getElementById("slideshow").style.height = hig + "px";
-document.getElementById("slideshow").style.top = (((verge.viewportH() - document.getElementById("totalnav").offsetHeight) * 3) + document.getElementById("totalnav").offsetHeight) + "px";
+document.getElementById("slideshow").style.top = (((hig) * 3) + document.getElementById("totalnav").offsetHeight) + "px";
 document.getElementById("slideshow").style.left = "0px";
 
 
@@ -662,11 +702,11 @@ document.getElementById("sponsorship").style.height = hig + "px";
 document.getElementById("photos").style.height = hig + "px";
 document.getElementById("contact").style.height = hig + "px";
 document.getElementById("heighter").style.height = document.getElementById("totalnav").offsetHeight + "px";
-document.getElementById("map").style.height = (verge.viewportH() - document.getElementById("totalnav").offsetHeight) + "px";
-document.getElementById("map").style.top = (((verge.viewportH() - document.getElementById("totalnav").offsetHeight) * 5) + document.getElementById("totalnav").offsetHeight) + "px";
+document.getElementById("map").style.height = (hig) + "px";
+document.getElementById("map").style.top = (((hig) * 5) + document.getElementById("totalnav").offsetHeight) + "px";
 document.getElementById("map").style.left = "0px";
 document.getElementById("slideshow").style.height = hig + "px";
-document.getElementById("slideshow").style.top = (((verge.viewportH() - document.getElementById("totalnav").offsetHeight) * 3) + document.getElementById("totalnav").offsetHeight) + "px";
+document.getElementById("slideshow").style.top = (((hig) * 3) + document.getElementById("totalnav").offsetHeight) + "px";
 document.getElementById("slideshow").style.left = "0px";
 });
   
@@ -680,6 +720,7 @@ document.getElementById("slideshow").style.left = "0px";
  <script src="js/2.js" async></script>
  <script src="js/3.js" async></script>
  <script src="js/4.js" async></script>
+ <script src="js/5.js" async></script>
 
 
 </body>
