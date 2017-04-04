@@ -7,6 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.8.2/countUp.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+          
 
 <style>
 body {
@@ -23,67 +32,12 @@ body {
 #home {
     margin: 0px;
     padding: 0px;
-    overflow: hidden;
-    background-image:    url(images/no-mans-sky-concept-art.png);
-    background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
-    background-position: center center;   
+    overflow: hidden;  
 }
 
 #map {
     margin:0px;
     padding:0px;
-}
-
-.slideUp{
-	animation-name: slideUp;
-	-webkit-animation-name: slideUp;	
-
-	animation-duration: 2s;	
-	-webkit-animation-duration: 2s;
-
-	animation-timing-function: ease;	
-	-webkit-animation-timing-function: ease;
-
-	visibility: visible !important;			
-}
-
-@keyframes slideUp {
-	0% {
-		transform: translateY(100%);
-	}
-	100%{
-		transform: translateY(0%);
-	}	
-}
-
-
-@-webkit-keyframes slideUp {
-	0% {
-		-webkit-transform: translateY(100%);
-	}
-	100%{
-		-webkit-transform: translateY(0%);
-	}
-}
-
-
-
-
-
-/* linksSlideUp */
-
-.linksSlideUp{
-	animation-name: slideUp;
-	-webkit-animation-name: slideUp;	
-
-	animation-duration: 3s;	
-	-webkit-animation-duration: 3s;
-
-	animation-timing-function: ease;	
-	-webkit-animation-timing-function: ease;
-
-	visibility: visible !important;			
 }
 
 .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
@@ -109,9 +63,6 @@ right: 0px !important;
 #smallscreenwarning {
     display: initial !important;
 }
-
-}
-
 </style>
 
 
@@ -122,10 +73,13 @@ right: 0px !important;
 
 
 </head>
-<body id="body" style="overflow-x: hidden;">    
+<body id="body" style="overflow-x: hidden; font-family: 'Roboto',sans-serif !important; font-weight: 300;">    
+
+
 <div id="wrapper" style="width:100%; position: relative;" data-target="#myNavbar">
 
-<nav class="navbar navbar-inverse navbar-fixed-top" id="totalnav" style="position: fixed;">
+
+<nav class="navbar navbar-inverse navbar-fixed-top" id="totalnav" style="height: 50px; line-height: 50px;">
   <div class="container-fluid">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -155,32 +109,61 @@ right: 0px !important;
 <div id="heighter"></div>
 
 
+
+
+
 <div id="home" class="container-fluid" style="overflow: hidden;">
 
-<script>document.getElementById("home").style.height = (document.documentElement.clientHeight - document.getElementById("totalnav").offsetHeight) + "px";
+<div id="slider">
+  <div class="slider fullscreen" id="slider2" style="position: absolute;">
+    <ul class="slides">
+      <li>
+        <img src="images/Gallery1.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h1>Rice Ravens FTC Team</h3>
+          <h3 class="light grey-text text-lighten-3">"Darn it Bubbles"</h5>
+        </div>
+      </li>
+      <li>
+        <img src="images/Gallery2.jpg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Our Team</h3>
+          <h5 class="light grey-text text-lighten-3">From Rice Middle School, Plano, Texas</h5>
+        </div>
+      </li>
+      <li>
+        <img src="images/Gallery3.jpg"> <!-- random image -->
+        <div class="caption right-align">
+          <h3>We don't quit</h3>
+          <h5 class="light grey-text text-lighten-3">And we never give up</h5>
+        </div>
+      </li>
+      <li>
+        <img src="images/untitled.png"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>And most of all we have fun</h3>
+          <h5 class="light grey-text text-lighten-3">We love to do this! &#9825;&#9825;</h5>
+        </div>
+      </li>
+    </ul>
+  </div></div>
+
+</div>
+
+<script>
+document.getElementById("home").style.height = (document.documentElement.clientHeight - document.getElementById("totalnav").offSetHeight) + "px";
+document.getElementById("slider2").style.height = (document.documentElement.clientHeight) + "px";
 </script>
 
-<div class="slideUp" style="font-size: 6rem; margin-top: 0px; padding: 2%; background-color: white; opacity: 0.75; line-height: 1.1; margin: 2%;">Rice Ravens FTC Team</div>
 
-<div class="linksSlideUp" style="font-size: 2rem; margin-top: 0px; padding: 2%; background-color: white; opacity: 0.75; margin: 2%;">
-<div id="text2">
 
-The mission of the Rice Ravens FTC Team is to successfully participate in the FTC robotics tournament while demonstarting gracious professionalism. 
-In this team, we strive to learn from our experiences and demonstrate core values. We explore in the areas we have yet to know and gain from them.
-We enjoy being part of this team.
-
-</div>
-</div>
-</div>
-
-<div id="who" class="container-fluid" style="overflow: hidden;">
-  <h1>Who?</h1>
-  <h3>Who are we? What do we do?</h3>
+<div id="who" class="container-fluid" style="overflow: hidden">
+  <h3>Who?</h3>
+  <h5 style="margin-top:20px;margin-bottom:10px;font-size:24px;">Who are we? What do we do?</h5>
   <p>We are a robotics team from Rice Middle School that particpates in the annual <i>First Tech Challenge</i>.</p>
 <br>
 
-
-<blockquote>
+<blockquote style="margin:0px; font-size: 20px;">
 <p>
 <i>"<strong>
 It’s way more than building robots.
@@ -198,13 +181,12 @@ Each season concludes with Super-Regional Championships and an exciting FIRST Ch
 <footer>From firstinspires.org</footer>
 </blockquote>
 <br>
-
 <p>For us, this is <i>fun</i>. We typically have after-school weekly meetings to collaborate on our common goal.</p>
 
 <br>
-<h3>Game</h3>
+<h3 style="font-size:36px;">Game</h3>
 <br>
-<blockquote>
+<blockquote  style="margin:0px; font-size: 20px;">
 <p>
 <i>"The playing field for the Game consists of the FIRST Tech Challenge game pieces set up on a foam-mat surface, surrounded by a metal and polycarbonate Field frame. 
 Each Tournament features Alliances, which are comprised of two Teams, competing against one another on the playing field. 
@@ -214,97 +196,158 @@ world around them in a positive manner."</i>
 </p>
 <footer>From firstinspires.org</footer>
 </blockquote>
-
+<br>
 <p>The 2016-2017 First Tech Challenge challenges students to create a robot which can: <i>Input stuff here</i><br>
-Full details can be found on these videos: <a href="https://www.youtube.com/watch?v=A_e5r1lXraY">https://www.youtube.com/watch?v=A_e5r1lXraY</a> and <a href="https://www.youtube.com/embed/iQLrcQbm8cg">https://www.youtube.com/embed/iQLrcQbm8cg</a>
+Full details can be found on these videos: <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="What's FTC" href="https://www.youtube.com/watch?v=A_e5r1lXraY">https://www.youtube.com/watch?v=A_e5r1lXraY</a> and <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="This year's FTC Challenge" href="https://www.youtube.com/embed/iQLrcQbm8cg">https://www.youtube.com/embed/iQLrcQbm8cg</a>
 </p>
 
+  <div class="card" style="width: 300px; display: inline-block;">
+    <div class="card-image waves-effect waves-block waves-light"><br>
+      <center><span class="material-icons" style="font-size:64px;">query_builder</span></center>
+    </div>
+    <div class="card-content">
+      <span class="card-title grey-text text-darken-4" style="font-size: 36px;">100</span>
+      <span>Team Meeting Hours Logged</span>
+    </div>
+  </div>
+
+  <div class="card" style="width: 300px; display: inline-block;">
+    <div class="card-image waves-effect waves-block waves-light"><br>
+      <center><span class="material-icons" style="font-size:64px;">people</span></center>
+    </div>
+    <div class="card-content">
+      <span class="card-title grey-text text-darken-4" style="font-size: 36px;">9</span>
+      <span>Team Members</span><br><span>All dedicated</span>
+    </div>
+  </div>
+
 </div>
+
+
+<style>
+
+#who {
+    background-image: url("http://ashburnrobotics.com/gearedup/wp-content/uploads/sites/3/2016/06/texture1.jpg");
+    background-attachment: fixed;
+}
+</style>
+<script>document.getElementsByClassName("card")[1].style.height = document.getElementsByClassName("card")[0].offSetHeight + "px";</script>
 
 <div id="members" class="container-fluid" style="overflow: hidden; background-color: #eceeef">
-  <h1>Members</h1>
-  <p style="line-height: 1.4">Of the 2016-2017 team</p>
+  <h1 style="font-size: 36px; margin: 0px; margin: 0px; margin-top: 20px; margin-bottom: 10px;">Meet the Team</h1>
+  <p style="line-height: 1.4">Of the 2016-2017 School Year</p>
+
+  <div class="carousel">
+    <a class="carousel-item" href="#one!"><img class="circle" src="http://lorempixel.com/250/250/nature/1"></a>
+    <a class="carousel-item" href="#two!"><img class="circle" src="http://lorempixel.com/250/250/nature/2"></a>
+    <a class="carousel-item" href="#three!"><img class="circle" src="http://lorempixel.com/250/250/nature/3"></a>
+    <a class="carousel-item" href="#four!"><img class="circle" src="http://lorempixel.com/250/250/nature/4"></a>
+    <a class="carousel-item" href="#five!"><img class="circle" src="http://lorempixel.com/250/250/nature/5"></a>
+  </div>
+
+<div id="clockdiv" style="position: fixed; top:75px; right: 25px; z-index: 500; display: none;">
+  <div>
+    <span>Time until Next Meeting</span>
+    <div class="smalltext">Hi</div>
+  </div>
+  <div>
+    <span class="days"></span>
+    <div class="smalltext">Days</div>
+  </div>
+  <div>
+    <span class="hours"></span>
+    <div class="smalltext">Hours</div>
+  </div>
+  <div>
+    <span class="minutes"></span>
+    <div class="smalltext">Minutes</div>
+  </div>
+  <div>
+    <span class="seconds"></span>
+    <div class="smalltext">Seconds</div>
+  </div>
+</div>
+<style>
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(http://fonts.gstatic.com/s/materialicons/v21/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+}
+
+#clockdiv{
+	font-family: sans-serif;
+	color: #fff;
+	display: inline-block;
+	font-weight: 100;
+	text-align: center;
+	font-size: 30px;
+}
+
+#clockdiv > div{
+	padding: 10px;
+	border-radius: 3px;
+	background: #00BF96;
+	display: inline-block;
+}
+
+#clockdiv div > span{
+	padding: 15px;
+	border-radius: 3px;
+	background: #00816A;
+	display: inline-block;
+}
+</style>
 
 
-<div class="static-background" style="margin-right: -15px; margin-left: -15px;" id="parallel"></div>
-
-<table id="memberstable" class="table table-responsive table-bordered" style="width: 100%; margin-right: 15px; margin-left: -15px; position: absolute;"><tr><td style="padding-right: 8px;">
-<table class="table table-responsive table-hover table-bordered">
-<thread>
-<tr>
-<td>First name</td>
-<td>Last name</td>
-<td>What they did</td>
-</tr></thread><tbody>
-<tr>
-<td>First name</td>
-<td>Last name</td>
-<td>What they did</td>
-</tr>
-<tr>
-<td>First name</td>
-<td>Last name</td>
-<td>What they did</td>
-</tr>
-<tr>
-<td>First name</td>
-<td>Last name</td>
-<td>What they did</td>
-</tr>
-<tr>
-<td>First name</td>
-<td>Last name</td>
-<td>What they did</td>
-</tr></tbody></table>
-</td>
-
-
-<td style="padding-left: 8px;">
-<table class="table table-responsive table-hover table-bordered">
-<thread>
-<tr>
-<td>First name</td>
-<td>Last name</td>
-<td>What they did</td>
-</tr></thread><tbody>
-<tr>
-<td>First name</td>
-<td>Last name</td>
-<td>What they did</td>
-</tr>
-<tr>
-<td>First name</td>
-<td>Last name</td>
-<td>What they did</td>
-</tr>
-<tr>
-<td>First name</td>
-<td>Last name</td>
-<td>What they did</td>
-</tr>
-<tr>
-<td>First name</td>
-<td>Last name</td>
-<td>What they did</td>
-</tr></tbody></table>
-</td></tr></table>
+  <center><div class="card" style="min-width:500px; max-width:50%; min-height: 300px;">
+    <div class="card-content activator">
+      <span id="name" class="card-title activator grey-text text-darken-4 spideryfont" style="font-size: 24px;">Card Title</span>
+      <p class="spideryfont">Grade</p>
+      <p class="spideryfont">Job and Purpose</p><br>
+      <p class="spideryfont">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean felis libero, semper sodales interdum id, commodo a metus. Proin non tincidunt nisl. In hac habitasse platea dictumst. Vivamus scelerisque fermentum ipsum, dignissim interdum dolor elementum a. Nunc dictum nisi enim, non fringilla ante dignissim vel. Aliquam vel orci cursus, elementum est ac, mollis sapien. Mauris vestibulum maximus tempor. Aliquam id facilisis turpis. Morbi vitae vehicula nulla, at commodo velit. Fusce ut sagittis tellus. Maecenas et eleifend tellus. Donec ac placerat neque. 
+Aenean interdum, lectus id suscipit suscipit, elit ipsum mattis nisi, id sodales elit neque a massa. Morbi risus ligula, elementum eget fermentum eget, dictum id dolor. Maecenas eget elit sollicitudin, accumsan turpis vitae, aliquam libero. In tincidunt eleifend nisl, at commodo orci sodales nec. Aenean bibendum convallis velit vitae tempor. Nullam efficitur mollis sodales. Ut non vestibulum tortor. Pellentesque ullamcorper finibus lectus, pulvinar consectetur purus malesuada id. Duis dapibus urna et nulla mattis, eget bibendum ipsum iaculis. Phasellus vehicula finibus nibh. Aliquam mollis molestie lectus vitae mollis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque luctus non lorem in porta. Proin suscipit pharetra rhoncus. </p>
+      <i class="material-icons right" style="position: absolute; top:25px; right:25px;">more_vert</i>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4 spideryfont">Card Title<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    </div>
+  </div></center>
 
 <div id="smallscreenwarning" style="display: none">There are more members, but they are not visible due to your small screen</div>
-
 </div>
+
+
 
 
 <style id="style">
+
+.smalltext{
+	padding-top: 5px;
+	font-size: 16px;
+}
+.spideryfont {
+font-family: "Roboto",sans-serif !important;
+font-weight: 300;
+}
 .static-background {
-  background: url(images/untitled.png) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
     min-height: 600px; 
-   -moz-box-shadow:    inset 0 0 50px #000000;
-   -webkit-box-shadow: inset 0 0 50px #000000;
-   box-shadow:         inset 0 0 50px #000000;
 }
 
 
@@ -420,7 +463,9 @@ span.billsBillsBills {
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
-
+.button:focus {
+    background-color:#4caf50;
+}
 .button2:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -433,12 +478,12 @@ min-height: 100%;
 </style>
 
 <div id="sponsorship" class="container-fluid" style="overflow: hidden;" style="color: white">
-  <h1 style="color: white">Sponsorship</h1>
+  <h1 style="color: white; font-size: 36px; margin: 0px; margin-top: 20px; margin-bottom: 10px;">Sponsorship</h1>
   <p style="color: white">The success of Rice Ravens FTC Team is dependent on the contributions from generous donors and sponsors. A investment is highly benifical to the team and is supporting a cause that we believe in.<b> Sponsorships help us to buy materials and parts</b>.<br>
   We are seeking sponsorships and donations from several entities and private citizens. See the sponsorship packet to learn more about how you can support and sponsor out team.
 </p>
   
-  <button id="button" class="button button2">Click Me for Animation</button>
+  <button id="button" class="waves-effect waves-light button button2">Click Me for Animation</button>
 
   <p style="color: white">Our success thus far could not have been possible without the help of our sponsors below</p>
 <br><br><br>
@@ -462,11 +507,10 @@ min-height: 100%;
 
 
 
+    <div class="container" style="width: 100%;">
 
-    <div class="container">
-
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog" style="width: 75%;">
+  <div class="modal fade" id="myModal" role="dialog" style="width: 75%; padding: 0px; visibility: hidden; max-height: 100%;">
+    <div class="modal-dialog" style="width: 100%; padding: 0px; visibility: visible;">
     
       <!-- Modal content-->
       <div class="modal-content">
@@ -477,8 +521,8 @@ min-height: 100%;
         <div class="modal-body">
           <center><img id="galleryimg" src="" style="width: auto; max-width: 75%; height: auto;"></img></center>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <div class="modal-footer" style="background-color: white">
+          <div type="button" class="waves-effect waves-light button button2" data-dismiss="modal">Close</div>
         </div>
       </div>
       
@@ -486,8 +530,8 @@ min-height: 100%;
   </div>
 
 
-  <div class="modal fade" id="myModal2" role="dialog">
-    <div class="modal-dialog" style="width: 75%;">
+  <div class="modal fade" id="myModal2" role="dialog" style="width: 75%; padding: 0px; visibility: hidden; max-height: 100%;">
+    <div class="modal-dialog" style="width: 100%; padding: 0px; visibility: visible;">
     
       <!-- Modal content-->
       <div class="modal-content">
@@ -498,8 +542,8 @@ min-height: 100%;
         <div class="modal-body">
           <center><video style="width: auto; min-height: 1000px; max-height: 1500px;" controls><source id="videosrc" src="" id="galleryimg"></source></video></center>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <div class="modal-footer" style="background-color: white">
+          <button type="button" class="waves-effect waves-light button button2" data-dismiss="modal">Close</button>
         </div>
       </div>
       
@@ -508,16 +552,13 @@ min-height: 100%;
 
         <div class="row" style="overflow:hidden;">
 
-
-
             <div class="col-lg-12">
 
-                <h1 class="page-header">Gallery</h1>
+                <h1 class="page-header" style="font-size: 36px;">Gallery</h1>
 		<p>Over the course of our team, we took many photos and videos to remember our experiences</p>
                 <p>Videos can be found on our youtube channel, <a href="https://www.youtube.com/channel/UCkxa9w-kGn4Z9GjPIIhufYQ">https://www.youtube.com/channel/UCkxa9w-kGn4Z9GjPIIhufYQ</a>.
 
             </div>
-
 
 
             <div class="col-lg-3 col-md-4 col-xs-6 thumb">
@@ -668,8 +709,7 @@ min-height: 100%;
 
 </div>
 
-  
-<script>
+  <script>
 !function(a,b,c){"undefined"!=typeof module&&module.exports?module.exports=c():a[b]=c()}(this,"verge",function(){function a(){return{width:k(),height:l()}}function b(a,b){var c={};return b=+b||0,c.width=(c.right=a.right+b)-(c.left=a.left-b),c.height=(c.bottom=a.bottom+b)-(c.top=a.top-b),c}function c(a,c){return a=a&&!a.nodeType?a[0]:a,a&&1===a.nodeType?b(a.getBoundingClientRect(),c):!1}function d(b){b=null==b?a():1===b.nodeType?c(b):b;var d=b.height,e=b.width;return d="function"==typeof d?d.call(b):d,e="function"==typeof e?e.call(b):e,e/d}var e={},f="undefined"!=typeof window&&window,g="undefined"!=typeof document&&document,h=g&&g.documentElement,i=f.matchMedia||f.msMatchMedia,j=i?function(a){return!!i.call(f,a).matches}:function(){return!1},k=e.viewportW=function(){var a=h.clientWidth,b=f.innerWidth;return b>a?b:a},l=e.viewportH=function(){var a=h.clientHeight,b=f.innerHeight;return b>a?b:a};return e.mq=j,e.matchMedia=i?function(){return i.apply(f,arguments)}:function(){return{}},e.viewport=a,e.scrollX=function(){return f.pageXOffset||h.scrollLeft},e.scrollY=function(){return f.pageYOffset||h.scrollTop},e.rectangle=c,e.aspect=d,e.inX=function(a,b){var d=c(a,b);return!!d&&d.right>=0&&d.left<=k()},e.inY=function(a,b){var d=c(a,b);return!!d&&d.bottom>=0&&d.top<=l()},e.inViewport=function(a,b){var d=c(a,b);return!!d&&d.bottom>=0&&d.right>=0&&d.top<=l()&&d.left<=k()},e});
 </script>
 
@@ -689,7 +729,6 @@ document.getElementById("map").style.left = "0px";
 document.getElementById("slideshow").style.height = hig + "px";
 document.getElementById("slideshow").style.top = (((hig) * 3) + document.getElementById("totalnav").offsetHeight) + "px";
 document.getElementById("slideshow").style.left = "0px";
-
 
 
 window.addEventListener('resize', function(event){
@@ -713,14 +752,41 @@ document.getElementById("slideshow").style.left = "0px";
 
 </script>
 
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
  <script src="js/1.js" async></script>
  <script src="js/2.js" async></script>
  <script src="js/3.js" async></script>
  <script src="js/4.js" async></script>
- <script src="js/5.js" async></script>
+
+<script>
+      $('.slider').slider();
+</script>
+
+        <footer class="page-footer" style="padding-top: 60px;">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Rice Ravens FTC Team</h5>
+                <p class="grey-text text-lighten-4">This website was made for us to have a web presence and make ourself known. GO RAVENS!<br><br>Did you know this website was made by a 12-year-old named Ananth Vivekanand? You can find more about me in the Members section.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="http://pisd.edu/schools/secondary/rice/index.shtml">Rice Middle School</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2017 Anti-Copyright Rice Middle School
+            <a class="grey-text text-lighten-4 right" href="https://github.com/AnanthVivekanand/RiceRavens">Code for website (Click)</a>
+            </div>
+          </div>
+        </footer>
+
 
 
 </body>
