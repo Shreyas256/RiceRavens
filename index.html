@@ -1,21 +1,22 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <title>Rice Ravens FTC Team</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+    var isMobile = window.matchMedia("only screen and (max-width: 760px)");
+
+    if (isMobile.matches) {
+        window.location.replace('mobile.html');
+    }
+</script>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.8.2/countUp.js"></script>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
-
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
-          
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>   
 
 <style>
 body {
@@ -120,7 +121,7 @@ right: 0px !important;
       <li>
         <img src="images/Gallery1.jpg"> <!-- random image -->
         <div class="caption center-align">
-          <h1>Rice Ravens FTC Team</h3>
+          <h1>Rice Ravens FTC Team 11472</h3>
           <h3 class="light grey-text text-lighten-3">"Darn it Bubbles"</h5>
         </div>
       </li>
@@ -155,14 +156,25 @@ document.getElementById("home").style.height = (document.documentElement.clientH
 document.getElementById("slider2").style.height = (document.documentElement.clientHeight) + "px";
 </script>
 
-
+<script type="text/javascript">
+      $('.slider').slider();
+</script>
 
 <div id="who" class="container-fluid" style="overflow: hidden">
   <h3>Who?</h3>
   <h5 style="margin-top:20px;margin-bottom:10px;font-size:24px;">Who are we? What do we do?</h5>
   <p>We are a robotics team from Rice Middle School that particpates in the annual <i>First Tech Challenge</i>.</p>
 <br>
-
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large red">
+      <i class="large material-icons">mode_edit</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating red" onclick="window.location.href = 'mailto:address@dmail.com';"><i class="material-icons">mail</i></a></li>
+      <li><a class="btn-floating yellow darken-1" onclick="window.location.href = 'tel:+900300400';"><i class="material-icons">call</i></a></li>
+      <li><a class="btn-floating green" onclick="window.open('https://www.google.com/maps/place/Rice+Middle+School/@33.0934219,-96.7621271,17z/data=!3m1!4b1!4m5!3m4!1s0x864c3d4359213b13:0xcad1355d9450d13f!8m2!3d33.0934219!4d-96.7599384');"><i class="material-icons">directions</i></a></li>
+    </ul>
+  </div>
 <blockquote style="margin:0px; font-size: 20px;">
 <p>
 <i>"<strong>
@@ -207,7 +219,7 @@ Full details can be found on these videos: <a class="tooltipped" data-position="
     </div>
     <div class="card-content">
       <span class="card-title grey-text text-darken-4" style="font-size: 36px;">100</span>
-      <span>Team Meeting Hours Logged</span>
+      <span>Total Team Meeting Hours Logged</span>
     </div>
   </div>
 
@@ -217,7 +229,7 @@ Full details can be found on these videos: <a class="tooltipped" data-position="
     </div>
     <div class="card-content">
       <span class="card-title grey-text text-darken-4" style="font-size: 36px;">9</span>
-      <span>Team Members</span><br><span>All dedicated</span>
+      <span>Team Members</span><br><span>- All dedicated</span>
     </div>
   </div>
 
@@ -240,10 +252,11 @@ Full details can be found on these videos: <a class="tooltipped" data-position="
   <div class="carousel">
     <a class="carousel-item" href="#one!"><img class="circle" src="http://lorempixel.com/250/250/nature/1"></a>
     <a class="carousel-item" href="#two!"><img class="circle" src="http://lorempixel.com/250/250/nature/2"></a>
-    <a class="carousel-item" href="#three!"><img class="circle" src="http://lorempixel.com/250/250/nature/3"></a>
+    <a class="carousel-item" href="#three!"><img class="circle"src="http://lorempixel.com/250/250/nature/3"></a>
     <a class="carousel-item" href="#four!"><img class="circle" src="http://lorempixel.com/250/250/nature/4"></a>
     <a class="carousel-item" href="#five!"><img class="circle" src="http://lorempixel.com/250/250/nature/5"></a>
   </div>
+<center><p>Swipe or Click: <a onclick="$('.carousel').carousel('prev');" class="btn">&larr;</a> <a class="btn" onclick="$('.carousel').carousel('next');">&rarr;</a></p><center>
 
 <div id="clockdiv" style="position: fixed; top:75px; right: 25px; z-index: 500; display: none;">
   <div>
@@ -268,28 +281,6 @@ Full details can be found on these videos: <a class="tooltipped" data-position="
   </div>
 </div>
 <style>
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Material Icons'), local('MaterialIcons-Regular'), url(http://fonts.gstatic.com/s/materialicons/v21/2fcrYFNaTjcS6g4U3t-Y5ZjZjT5FdEJ140U2DJYC3mY.woff2) format('woff2');
-}
-
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  line-height: 1;
-  letter-spacing: normal;
-  text-transform: none;
-  display: inline-block;
-  white-space: nowrap;
-  word-wrap: normal;
-  direction: ltr;
-  font-feature-settings: 'liga';
-}
-
 #clockdiv{
 	font-family: sans-serif;
 	color: #fff;
@@ -332,9 +323,6 @@ Aenean interdum, lectus id suscipit suscipit, elit ipsum mattis nisi, id sodales
 
 <div id="smallscreenwarning" style="display: none">There are more members, but they are not visible due to your small screen</div>
 </div>
-
-
-
 
 <style id="style">
 
@@ -516,7 +504,7 @@ min-height: 100%;
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
+          <h4 class="modal-title">Closeup</h4>
         </div>
         <div class="modal-body">
           <center><img id="galleryimg" src="" style="width: auto; max-width: 75%; height: auto;"></img></center>
@@ -537,7 +525,7 @@ min-height: 100%;
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
+          <h4 class="modal-title">Closeup</h4>
         </div>
         <div class="modal-body">
           <center><video style="width: auto; min-height: 1000px; max-height: 1500px;" controls><source id="videosrc" src="" id="galleryimg"></source></video></center>
@@ -735,6 +723,7 @@ window.addEventListener('resize', function(event){
 var hig = verge.viewportH() - document.getElementById("totalnav").offsetHeight;
 document.getElementById("wrapper").style.height = (hig * 6) + "px";
 document.getElementById("home").style.height = hig + "px";
+document.getElementById("slider2").style.height = (document.documentElement.clientHeight) + "px";
 document.getElementById("who").style.height = hig + "px";
 document.getElementById("members").style.height = hig + "px";
 document.getElementById("sponsorship").style.height = hig + "px";
@@ -751,17 +740,53 @@ document.getElementById("slideshow").style.left = "0px";
   
 
 </script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/1.8.2/countUp.js"></script>
 
  <script src="js/1.js" async></script>
  <script src="js/2.js" async></script>
  <script src="js/3.js" async></script>
  <script src="js/4.js" async></script>
+ <script src="js/5.js" async></script>
 
 <script>
-      $('.slider').slider();
-</script>
+function changePerson(index, elem) {
+switch (index) {
+	case 0:
+		name = "Saturday";
+		break;
+	case 1:
+		name = "Monday";
+		break;
+	case 2:
+		name = "Tuesday";
+		break;
+	case 3:
+		name = "Wednesday";
+		break;
+	case 4:
+		name = "Thursday";
+		break;
+	case 5:
+		name = "Friday";
+		break;
+	case 6:
+		name = "Saturday";
+}
+document.getElementById("name").innerHTML = name;
+}
+      $('.carousel').carousel({
+            dist:-50,
+            shift:0,
+            padding:200,
+	onCycleTo: function (ele, dragged) {
+		changePerson($(ele).index(), ele);
+	}
 
-        <footer class="page-footer" style="padding-top: 60px;">
+      });
+</script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <footer class="page-footer" style="background-color:#2196F3;">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
@@ -779,7 +804,7 @@ document.getElementById("slideshow").style.left = "0px";
               </div>
             </div>
           </div>
-          <div class="footer-copyright">
+          <div class="footer-copyright" style="background-color:#1976D2;">
             <div class="container">
             © 2017 Anti-Copyright Rice Middle School
             <a class="grey-text text-lighten-4 right" href="https://github.com/AnanthVivekanand/RiceRavens">Code for website (Click)</a>
