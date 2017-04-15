@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Imagemax JQuery Plugin</title>
+
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+
+<body>
+
+	<div id="bg">
+        <img data-src="images/untitled.png"/>
+        <img data-src="images/Gallery2.jpg"/>
+        <img data-src="images/Gallery3.jpg"/>
+        <img data-src="images/Gallery4.png"/>
+        <img data-src="images/Gallery6.jpg"/>
+	</div>
+
+	<ul id="thumbs">
+    	<li><img src="images/thumb/Gallery1.jpg"/> </li>
+    	<li><img src="images/thumb/Gallery2.jpg"/></li>
+    	<li><img src="images/thumb/Gallery3.jpg"/></li>
+    	<li><img src="images/thumb/Gallery4.jpg"/></li>
+	</ul>
+
+
+	<div id="prev" style="z-index:2"><a href="#"><img src="images/arrow_prev.png" alt="" /></a></div>
+	<div id="next" style="z-index:2"><a href="#"><img src="images/arrow_next.png" alt="" /></a></div>
+
+	<div id="spinner"><img src="images/spinner.gif" alt="" /></div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/jquery.imagemax.js"></script>
+<script>
+	$('#bg').imagemax({
+		speed: 1200,
+		transition: 'slide',
+		slideType: 'horizontal',
+		prevButton:'#prev',
+		nextButton:'#next',
+		preloader: '#spinner',
+		thumbList: '#thumbs',
+		easing: 'easeInOutQuad',
+		beforeLoad: onBeforeLoad,
+		afterLoad: onAfterLoad,
+  		afterTransition: onAfterTransition
+	});
+	function onBeforeLoad(e){
+		//handles highlighting of thumbnails
+		$('#thumbs').find('.active').removeClass('active');
+		$('#thumbs li').eq(e.index).addClass('active');
+	}
+	function onAfterLoad(e){
+	 
+	};
+
+	function onAfterTransition(e){
+	  
+	}
+</script>
+
+</body>
+</html>
