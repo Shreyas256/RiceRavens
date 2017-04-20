@@ -331,170 +331,6 @@ ul {
     </div>
   </article>
 </section>
-<section class="panel b-yellow parallex" id="2" style="background-image: url('images/Back2.jpg'); color: white;">
-  <article class="panel__wrapper">
-    <div class="panel__content">
-      <h1 class="panel__headline">Who are we and what do we do?</h1>
-      <div class="panel__block" style="background: white;"></div>
-      <p style="color:white;">FTC, or First Tech Challenge, is a program that has, for almost a quarter of a century, inspired youth from across the world to pursue careers in the fields of science, engineering, and technology, through robotics competitions. These competitions force teens to find unique and innovative ways to solve problems that arise from a number of different challenges.
-<br><br>We at Rice Middle School formed a FTC team in hope that we would learn and experience hands-on STEM and engineering.
-</p>
-    </div>
-  </article>
-</section>
-<section class="panel b-red parallex" id="3" style="background-image: url('images/Gallery2.jpg'); color: white !important;">
-  <article class="panel__wrapper">
-    <div class="panel__content">
-      <h1 class="panel__headline">Members</h1>
-      <div class="panel__block" style="background: white;"></div>
-      <p style="color:white;">Our team is very devoted to FTC; we spend over a hundred hours just during meeting this school year.
-Our team members listed below have all help this team greatly in many ways.
-</p>
-
-<div class="div">
-<ul class="ul">
-<li class="li"><a class="a" href="members.html?data=1">Abinav Damera</a></li>
-<li class="li"><a class="a" href="members.html?data=2">Yashvini Deva</a></li>
-<li class="li"><a class="a" href="members.html?data=3">Josh Grifilo</a></li>
-<li class="li"><a class="a" href="members.html?data=4">Subiksha Jayakumar</a></li>
-<li class="li"><a class="a" href="members.html?data=5">Carol King</a></li>
-<li class="li"><a class="a" href="members.html?data=6">Jahnavi Lanka</a></li>
-<li class="li"><a class="a" href="members.html?data=7">Suchita Mamindla</a></li>
-<li class="li"><a class="a" href="members.html?data=8">Hunter Ogden</a></li>
-<li class="li"><a class="a" href="members.html?data=9">Mathew Padavil</a></li>
-<li class="li"><a class="a" href="members.html?data=10">Pranav Pattatathunaduvil</a></li>
-<li class="li"><a class="a" href="members.html?data=11">Rishmita Rao</a></li>
-<li class="li"><a class="a" href="members.html?data=12">Susmita Renjith</a></li>
-<li class="li"><a class="a" href="members.html?data=13">Rachael Thompson</a></li>
-<li class="li"><a class="a" href="members.html?data=14">Shining Xi</a></li>
-</ul>
-</div>
-    </div>
-  </article>
-</section>
-<style>
-.div {
-  width: 400px;
-}
-
-.h2 {
-  font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.li {
-  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
-  border-bottom: 1px solid #ccc;
-}
-
-.li:last-child {
-  border: none;
-}
-
-.li .a {
-  text-decoration: none;
-  color: white;
-  display: block;
-  width: 400px;
-
-  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
-  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
-  transition: font-size 0.3s ease, background-color 0.3s ease;
-}
-
-.li .a:hover {
-  font-size: 30px;
-  background: #f6f6f6;
-  color: black;
-}
-</style>
-<section class="panel b-green parallex" id="4" style="background-image: url('images/robot.png'); color: white !important;">
-  <article class="panel__wrapper">
-    <div class="panel__content">
-      <h1 class="panel__headline">Meet the robot</h1>
-      <div class="panel__block" style="background: white;"></div>
-      <p style="color:white;">Our robot was built, destroyed, built, destroyed, and built again. Every time we attended a 
-FTC match, we got new ideas and improved our robot. Most of our parts were bought from AndyMark, although in the final stage of the robot,
-we used VEX parts to create a shell for the robot.</p>
-    </div>
-  </article>
-</section>
-<section class="panel" id="5">
-
-
-<iframe src="events.html" style="width:100%; height:100%;" id="5child"></iframe> 
-
-
-</section>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
-    <script>
-var menu = document.querySelector('.nav__list');
-var burger = document.querySelector('.burger');
-var doc = $(document);
-var l = $('.scrolly');
-var panel = $('.panel');
-var vh = $(window).height();
-
-var openMenu = function() {
-  burger.classList.toggle('burger--active');
-  menu.classList.toggle('nav__list--active');
-};
-
-// reveal content of first panel by default
-panel.eq(0).find('.panel__content').addClass('panel__content--active');
-
-var scrollFx = function() {
-  var ds = doc.scrollTop();
-  var of = vh / 4;
-  
-  // if the panel is in the viewport, reveal the content, if not, hide it.
-  for (var i = 0; i < panel.length; i++) {
-    if (panel.eq(i).offset().top < ds+of) {
-     panel
-       .eq(i)
-       .find('.panel__content')
-       .addClass('panel__content--active');
-    } else {
-      panel
-        .eq(i)
-        .find('.panel__content')
-        .removeClass('panel__content--active')
-    }
-  }
-};
-
-var scrolly = function(e) {
-  e.preventDefault();
-  var target = this.hash;
-  var $target = $(target);
-
-  $('html, body').stop().animate({
-      'scrollTop': $target.offset().top
-  }, 300, 'swing', function () {
-      window.location.hash = target;
-  });
-}
-
-var init = function() {
-  burger.addEventListener('click', openMenu, false);
-  window.addEventListener('scroll', scrollFx, false);
-  window.addEventListener('load', scrollFx, false);
-  $('a[href^="#"]').on('click',scrolly);
-};
-
-doc.on('ready', init);
-document.getElementById("5child").style.height = $(window).height() + "px";
-</script>
 <style>
 .modal {
   will-change: visibility, opacity;
@@ -664,8 +500,170 @@ Our email is <a class="modala" onclick="window.location.href='mailto:address@dma
 			</div>
 		</div>
 	</div>
+<section class="panel b-yellow parallex" id="2" style="background-image: url('images/Back2.jpg'); color: white;">
+  <article class="panel__wrapper">
+    <div class="panel__content">
+      <h1 class="panel__headline">Who are we and what do we do?</h1>
+      <div class="panel__block" style="background: white;"></div>
+      <p style="color:white;">FTC, or First Tech Challenge, is a program that has, for almost a quarter of a century, inspired youth from across the world to pursue careers in the fields of science, engineering, and technology, through robotics competitions. These competitions force teens to find unique and innovative ways to solve problems that arise from a number of different challenges.
+<br><br>We at Rice Middle School formed a FTC team in hope that we would learn and experience hands-on STEM and engineering.
+</p>
+    </div>
+  </article>
+</section>
+<section class="panel b-red parallex" id="3" style="background-image: url('images/Gallery2.jpg'); color: white !important;">
+  <article class="panel__wrapper">
+    <div class="panel__content">
+      <h1 class="panel__headline">Members</h1>
+      <div class="panel__block" style="background: white;"></div>
+      <p style="color:white;">Our team is very devoted to FTC; we spend over a hundred hours just during meeting this school year.
+Our team members listed below have all help this team greatly in many ways.
+</p>
+
+<div class="div">
+<ul class="ul">
+<li class="li"><a class="a" href="members.html?data=1">Abinav Damera</a></li>
+<li class="li"><a class="a" href="members.html?data=2">Yashvini Deva</a></li>
+<li class="li"><a class="a" href="members.html?data=3">Josh Grifilo</a></li>
+<li class="li"><a class="a" href="members.html?data=4">Subiksha Jayakumar</a></li>
+<li class="li"><a class="a" href="members.html?data=5">Carol King</a></li>
+<li class="li"><a class="a" href="members.html?data=6">Jahnavi Lanka</a></li>
+<li class="li"><a class="a" href="members.html?data=7">Suchita Mamindla</a></li>
+<li class="li"><a class="a" href="members.html?data=8">Hunter Ogden</a></li>
+<li class="li"><a class="a" href="members.html?data=9">Mathew Padavil</a></li>
+<li class="li"><a class="a" href="members.html?data=10">Pranav Pattatathunaduvil</a></li>
+<li class="li"><a class="a" href="members.html?data=11">Rishmita Rao</a></li>
+<li class="li"><a class="a" href="members.html?data=12">Susmita Renjith</a></li>
+<li class="li"><a class="a" href="members.html?data=13">Rachael Thompson</a></li>
+<li class="li"><a class="a" href="members.html?data=14">Shining Xi</a></li>
+</ul>
+</div>
+    </div>
+  </article>
+</section>
+<style>
+.div {
+  width: 400px;
+}
+
+.h2 {
+  font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.li {
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+
+.li:last-child {
+  border: none;
+}
+
+.li .a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  width: 400px;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+.li .a:hover {
+  font-size: 30px;
+  background: #f6f6f6;
+  color: black;
+}
+</style>
+<section class="panel b-green parallex" id="4" style="background-image: url('images/robot.png'); color: white !important;">
+  <article class="panel__wrapper">
+    <div class="panel__content">
+      <h1 class="panel__headline">Meet the robot</h1>
+      <div class="panel__block" style="background: white;"></div>
+      <p style="color:white;">Our robot was built, destroyed, built, destroyed, and built again. Every time we attended a 
+FTC match, we got new ideas and improved our robot. Most of our parts were bought from AndyMark, although in the final stage of the robot,
+we used VEX parts to create a shell for the robot.</p>
+    </div>
+  </article>
+</section>
+<section class="panel" id="5">
 
 
+<iframe src="events.html" style="width:100%; height:100%;" id="5child"></iframe> 
+
+
+</section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script>
+var menu = document.querySelector('.nav__list');
+var burger = document.querySelector('.burger');
+var doc = $(document);
+var l = $('.scrolly');
+var panel = $('.panel');
+var vh = $(window).height();
+
+var openMenu = function() {
+  burger.classList.toggle('burger--active');
+  menu.classList.toggle('nav__list--active');
+};
+
+// reveal content of first panel by default
+panel.eq(0).find('.panel__content').addClass('panel__content--active');
+
+var scrollFx = function() {
+  var ds = doc.scrollTop();
+  var of = vh / 4;
+  
+  // if the panel is in the viewport, reveal the content, if not, hide it.
+  for (var i = 0; i < panel.length; i++) {
+    if (panel.eq(i).offset().top < ds+of) {
+     panel
+       .eq(i)
+       .find('.panel__content')
+       .addClass('panel__content--active');
+    } else {
+      panel
+        .eq(i)
+        .find('.panel__content')
+        .removeClass('panel__content--active')
+    }
+  }
+};
+
+var scrolly = function(e) {
+  e.preventDefault();
+  var target = this.hash;
+  var $target = $(target);
+
+  $('html, body').stop().animate({
+      'scrollTop': $target.offset().top
+  }, 300, 'swing', function () {
+      window.location.hash = target;
+  });
+}
+
+var init = function() {
+  burger.addEventListener('click', openMenu, false);
+  window.addEventListener('scroll', scrollFx, false);
+  window.addEventListener('load', scrollFx, false);
+  $('a[href^="#"]').on('click',scrolly);
+};
+
+doc.on('ready', init);
+document.getElementById("5child").style.height = $(window).height() + "px";
+</script>
 <script>
 var Modal = (function() {
 

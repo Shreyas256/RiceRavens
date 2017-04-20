@@ -1,717 +1,861 @@
-
 <!DOCTYPE html>
-<html>
+<html >
 <head>
-  <title>Rice Ravens FTC Team</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
-          
+  <meta charset="UTF-8">
+  <title>Vertical Layout with Navigation</title>
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
-<style>
+<meta name="viewport" content="width=device-width">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+      <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0px;
-    padding: 0px;
-    font-size: 20px;
-}
-#wrapper {
-    margin: 0px;
-    padding: 0px;
+  font-family: 'Montserrat';
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  margin: 0px;
 }
 
-
-#home {
-    margin: 0px;
-    padding: 0px;
-    overflow: hidden;  
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-#map {
-    margin:0px;
-    padding:0px;
+.nav {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  height: 0px;
 }
-
-.navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
-    color: #9d9d9d;
+.nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  height: 85vh;
+  -webkit-transform: translate(0, -100%);
+          transform: translate(0, -100%);
+  -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.content-container {
-    height: 1200px;
+.nav__list--active {
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
-
-  .linksSlideUp, .table, .unneeded, #footer {
-	display: none;
+.nav__item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+}
+.nav__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  text-decoration: none;
+  font-size: 24px;
+  background: #2b3033;
+  -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.nav__link:hover {
+  background: #272b2e;
+}
+@media (max-width: 640px) {
+  .nav {
+    width: 70px;
   }
-.content-container {
-    min-height: 1000px;
+  .nav__list {
+    height: 90vh;
+  }
+}
+
+.burger {
+  height: 15vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+  background: #2b3033;
+  cursor: pointer;
+  -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.burger:hover {
+  background: #272b2e;
+}
+.burger__patty {
+  position: relative;
+  height: 2px;
+  width: 40px;
+  background: white;
+}
+.burger__patty:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: white;
+}
+.burger__patty:after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: white;
+}
+.burger__patty, .burger__patty:before, .burger__patty:after {
+  will-change: transform;
+  -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.burger--active .burger__patty {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.burger--active .burger__patty:before {
+  -webkit-transform: rotate(-45deg) translate(-7px, -7px) scaleX(0.7);
+          transform: rotate(-45deg) translate(-7px, -7px) scaleX(0.7);
+}
+.burger--active .burger__patty:after {
+  -webkit-transform: rotate(45deg) translate(-7px, 7px) scaleX(0.7);
+          transform: rotate(45deg) translate(-7px, 7px) scaleX(0.7);
+}
+@media (max-width: 640px) {
+  .burger {
+    height: 10vh;
+  }
+  .burger__patty {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
+  .burger--active .burger__patty {
+    -webkit-transform: scale(0.8) rotate(90deg);
+            transform: scale(0.8) rotate(90deg);
+  }
+}
+
+.panel {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+.panel__wrapper {
+  padding: 7vh 7vw;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+.panel__content {
+  will-change: transform;
+  -webkit-transform: scale(0.7) rotateX(-230deg);
+          transform: scale(0.7) rotateX(-230deg);
+  -webkit-transform-origin: center 80%;
+          transform-origin: center 80%;
+  opacity: 0;
+  -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.panel__content--active {
+  -webkit-transform: none;
+          transform: none;
+  opacity: 1;
+}
+.panel__headline {
+  font-weight: 700;
+  opacity: 0.8;
+  font-size: 48px;
+  margin: 0 0 25px 0;
+}
+.panel p {
+  margin: 0 0 25px 0;
+  color: #1a1a1a;
+  font-size: 24px;
+  max-width: 800px;
+}
+.panel p:last-child {
+  margin-bottom: 0;
+}
+.panel__block {
+  height: 3px;
+  background: rgba(0, 0, 0, 0.2);
+  margin: 0 0 25px 0;
+}
+@media (max-width: 640px) {
+  .panel__headline {
+    font-size: 36px;
+  }
+  .panel__wrapper {
+    padding: 10vh 10vw;
+  }
+  .panel p {
+    font-size: 16px;
+  }
+  .div {
+    width: 200px !important;
+  }
+}
+
+.c-blue {
+  color: #5fc7ea;
+}
+
+.c-red {
+  color: #e68568;
+}
+
+.c-green {
+  color: #68e6ac;
+}
+
+.c-yellow {
+  color: #e6d068;
+}
+
+.b-blue {
+  background: #5fc7ea;
+}
+
+.b-red {
+  background: #e68568;
+}
+
+.b-green {
+  background: #68e6ac;
+}
+
+.b-yellow {
+  background: #e6d068;
+}
+
+.logo {
+  position: fixed;
+  bottom: 3vh;
+  right: 3vw;
+  z-index: 2;
+}
+.logo img {
+  width: 65px;
+  -webkit-transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transform: rotate(0);
+          transform: rotate(0);
+}
+.logo img:hover {
+  -webkit-transform: rotate(180deg) scale(1.1);
+          transform: rotate(180deg) scale(1.1);
+}
+.parallex {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 </style>
 
-
-
-
-
-
-
-
+  
 </head>
-<body id="body" style="overflow-x: hidden; font-family: 'Roboto',sans-serif !important; font-weight: 300;">    
 
-
-<div id="wrapper" style="width:100%; position: relative;" data-target="#myNavbar">
-
-
-<nav class="navbar navbar-inverse navbar-fixed-top" id="totalnav" style="height: 50px; line-height: 50px;">
-  <div class="container-fluid">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="">Rice Ravens FTC</a>
-    </div>
-    <div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav" style="float: left;">
-          <li><a style="font-size: 14px;" href="#home" class="link">Home</a></li>
-          <li><a style="font-size: 14px;" href="#who" class="link">Who?</a></li>
-          <li><a style="font-size: 14px;" href="#members" class="link">Members</a></li>
-          <li><a style="font-size: 14px;" href="#sponsorship" class="link">Sponsorship</a></li>
-          <li><a style="font-size: 14px;" href="#photos" class="link">Photos</a></li>
-          <li><a style="font-size: 14px;" href="#contact" class="link">Contact</a></li>
-        </ul>
-      </div>
-    </div>
+<body>
+  <nav class="nav">
+  <div class="burger">
+    <div class="burger__patty"></div>
   </div>
+
+  <ul class="nav__list">
+    <li class="nav__item">
+      <a href="#1" class="nav__link c-blue"><i class="fa fa-universal-access"></i></a>
+    </li>
+    <li class="nav__item">
+      <a href="#2" class="nav__link c-yellow scrolly"><i class="fa fa-id-card"></i></a>
+    </li>
+    <li class="nav__item">
+      <a href="#3" class="nav__link c-red"><i class="fa fa-users"></i></a>
+    </li>
+    <li class="nav__item">
+      <a href="#4" class="nav__link c-green"><i class="fa fa-android"></i></a>
+    </li>
+    <li class="nav__item">
+      <a href="#5" class="nav__link c-blue"><i class="fa fa-camera-retro"></i></a>
+    </li>
+  </ul>
 </nav>
 
-
-
-<div id="heighter"></div>
-
-
-
-
-
-<div id="home" class="container-fluid" style="overflow: hidden;">
-
-<div id="slider">
-  <div class="slider fullscreen" id="slider2" style="position: absolute;">
-    <ul class="slides">
-      <li>
-        <img src="images/Gallery1.jpg"> <!-- random image -->
-        <div class="caption center-align">
-          <h1>Rice Ravens FTC Team 11472</h3>
-          <h3 class="light grey-text text-lighten-3">"Darn it Bubbles"</h5>
-        </div>
-      </li>
-      <li>
-        <img src="images/Gallery2.jpg"> <!-- random image -->
-        <div class="caption left-align">
-          <h3>Our Team</h3>
-          <h5 class="light grey-text text-lighten-3">From Rice Middle School, Plano, Texas</h5>
-        </div>
-      </li>
-      <li>
-        <img src="images/Gallery3.jpg"> <!-- random image -->
-        <div class="caption right-align">
-          <h3>We don't quit</h3>
-          <h5 class="light grey-text text-lighten-3">And we never give up</h5>
-        </div>
-      </li>
-      <li>
-        <img src="images/untitled.png"> <!-- random image -->
-        <div class="caption center-align">
-          <h3>And most of all we have fun</h3>
-          <h5 class="light grey-text text-lighten-3">We love to do this! &#9825;&#9825;</h5>
-        </div>
-      </li>
-    </ul>
-  </div></div>
-
-</div>
-
-<script>
-document.getElementById("home").style.height = (document.documentElement.clientHeight - document.getElementById("totalnav").offSetHeight) + "px";
-document.getElementById("slider2").style.height = (document.documentElement.clientHeight) + "px";
-</script>
-
-
-
-<div id="who" class="container-fluid" style="overflow: hidden">
-  <h3>Who?</h3>
-  <h5 style="margin-top:20px;margin-bottom:10px;font-size:24px;">Who are we? What do we do?</h5>
-  <p>We are a robotics team from Rice Middle School that particpates in the annual <i>First Tech Challenge</i>.</p>
-<br>
-
-<blockquote style="margin:0px; font-size: 18px;">
-<p>
-<i>"<strong>
-It's way more than building robots.
-</strong> 
-FIRST Tech Challenge teams (10+ members, grades 7-12) are challenged to design, build, program, and operate robots to compete in a head-to-head challenge in an alliance format. 
-<span class="unneeded">Participants call it "the hardest fun you'll ever have!"</span> 
-Guided by adult Coaches and Mentors, students develop STEM skills and practice engineering principles 
-(like keeping an engineering notebook), while realizing the value of hard work, innovation, and sharing ideas. 
-The robot kit is reusable from year-to-year and can be programmed using a variety of languages, including Java. 
-<span class="unneeded">Teams also must raise funds, design and market their team brand, and do community outreach for which they can win awards. 
-Participants have access to tens of millions of dollars in college scholarships. 
-Each season concludes with Super-Regional Championships and an exciting FIRST Championship.</span>"
-</i>
-</p>
-<footer>From firstinspires.org</footer>
-</blockquote>
-<br>
-<blockquote  style="margin:0px; font-size: 18px;">
-<p>
-<i>"The playing field for the Game consists of the FIRST Tech Challenge game pieces set up on a foam-mat surface, surrounded by a metal and polycarbonate Field frame. 
-Each Tournament features Alliances, which are comprised of two Teams, competing against one another on the playing field. 
-<span class="unneeded">Teams work to overcome obstacles and meet challenges, while learning from, and interacting with their peers and adult Mentors. </span>
-Students develop a greater appreciation of science and technology and how they might use that knowledge to impact the 
-world around them in a positive manner."</i>
-</p>
-<footer>From firstinspires.org</footer>
-</blockquote><br>
-<p>For us, this is <i>fun</i>. We typically have after-school weekly meetings to collaborate on our common goal.</p>
-<p>
-Full details can be found on these videos: <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="What's FTC" href="https://www.youtube.com/watch?v=A_e5r1lXraY">https://www.youtube.com/watch?v=A_e5r1lXraY</a> and <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="This year's FTC Challenge" href="https://www.youtube.com/embed/iQLrcQbm8cg">https://www.youtube.com/embed/iQLrcQbm8cg</a>
-</p>
-</div>
-
-
+<section class="panel parallex" id="1" style="background-image: url('images/Gallery1.jpg'); color: white;background-attachment:scroll;">
+  <article class="panel__wrapper">
+    <div class="panel__content">
+      <h1 class="panel__headline">Rice Ravens FTC Team</h1>
+      <div class="panel__block" style="background: white;"></div>
+      <p style="color:white;">We are Rice Ravens: FTC Team 11472 from Plano, Texas!</p>
+    </div>
+  </article>
+</section>
 <style>
-
-#who {
-    background-image: url("http://ashburnrobotics.com/gearedup/wp-content/uploads/sites/3/2016/06/texture1.jpg");
-    background-attachment: fixed;
+.modal {
+  will-change: visibility, opacity;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-transition-delay: $modal-delay;
+          transition-delay: $modal-delay;
 }
-</style>
-
-<div id="members" class="container-fluid" style="overflow: hidden; background-color: #eceeef">
-  <h1 style="font-size: 36px; margin: 0px; margin: 0px; margin-top: 20px; margin-bottom: 10px;">Meet the Team</h1>
-  <p style="line-height: 1.4">Of the 2016-2017 School Year</p>
-  <div class="carousel">
-    <a class="carousel-item" href="#one!"><img class="circle" src="http://lorempixel.com/250/250/nature/1"></a>
-    <a class="carousel-item" href="#two!"><img class="circle" src="http://lorempixel.com/250/250/nature/2"></a>
-    <a class="carousel-item" href="#three!"><img class="circle" src="http://lorempixel.com/250/250/nature/3"></a>
-    <a class="carousel-item" href="#four!"><img class="circle" src="http://lorempixel.com/250/250/nature/4"></a>
-    <a class="carousel-item" href="#five!"><img class="circle" src="http://lorempixel.com/250/250/nature/5"></a>
-  </div>
-
-<center><p>Swipe or Click: <a onclick="$('.carousel').carousel('prev');" class="btn">&larr;</a> <a class="btn" onclick="$('.carousel').carousel('next');">&rarr;</a></p><center>
-
-  <center><div class="card" style="width: 90%; max-height: 90%;">
-    <div class="card-content activator">
-      <span id="name" class="card-title activator grey-text text-darken-4 spideryfont" style="font-size: 24px;">Card Title</span>
-      <p class="spideryfont">Grade</p>
-      <p class="spideryfont">Job and Purpose</p><br>
-      <p class="spideryfont">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean felis libero, semper sodales interdum id, commodo a metus. Proin non tincidunt nisl. In hac habitasse platea dictumst. Vivamus scelerisque fermentum ipsum, dignissim interdum dolor elementum a. Nunc dictum nisi enim, non fringilla ante dignissim vel. Aliquam vel orci cursus, elementum est ac, mollis sapien. Mauris vestibulum maximus tempor. Aliquam id facilisis turpis. Morbi vitae vehicula nulla, at commodo velit. Fusce ut sagittis tellus. Maecenas et eleifend tellus. Donec ac placerat neque. 
-Aenean interdum, lectus id suscipit suscipit, elit ipsum mattis nisi, id sodales elit neque a massa. Morbi risus ligula, elementum eget fermentum eget, dictum id dolor. Maecenas eget elit sollicitudin, accumsan turpis vitae, aliquam libero. In tincidunt eleifend nisl, at commodo orci sodales nec. Aenean bibendum convallis velit vitae tempor. Nullam efficitur mollis sodales. Ut non vestibulum tortor. Pellentesque ullamcorper finibus lectus, pulvinar consectetur purus malesuada id. Duis dapibus urna et nulla mattis, eget bibendum ipsum iaculis. Phasellus vehicula finibus nibh. Aliquam mollis molestie lectus vitae mollis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque luctus non lorem in porta. Proin suscipit pharetra rhoncus. </p>
-      <i class="material-icons right" style="position: absolute; top:25px; right:25px;">more_vert</i>
-    </div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4 spideryfont">Card Title<i class="material-icons right">close</i></span>
-      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-    </div>
-  </div></center>
-
-<div id="smallscreenwarning" style="display: none">There are more members, but they are not visible due to your small screen</div>
-</div>
-
-<style id="style">
-
-.smalltext{
-	padding-top: 5px;
-	font-size: 16px;
+.modal--active {
+  visibility: visible;
+  opacity: 1;
 }
-.spideryfont {
-font-family: "Roboto",sans-serif !important;
-font-weight: 300;
+.modal--align-top {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
-.static-background {
-    min-height: 600px; 
+.modal__bg {
+  background: transparent;
 }
-
-
-
-@-webkit-keyframes sway {
-
-
-	0%{
-		top:50%;
-		-webkit-transform: rotateX(-20deg);
-        transform: rotateX(-20deg);
-	}
-
-
-
-	3%{
-		 margin-left: -2%;
-		     -webkit-transform: rotateX(-80deg);
-          transform: rotateX(-80deg);
-
-	}
-
-
-
-	7% {
-		margin-left:1%
-		 -webkit-transform: rotateX(-170deg);
-          transform: rotateX(-170deg);
-	}
-  10% {
-    margin-left: 2%;
-	  -webkit-transform: rotateX(-230deg);
-          transform: rotateX(-230deg);
-     }
-   16% {
-   		margin-left: 5%;
-   	    	  -webkit-transform: rotateX(-250deg);
-          transform: rotateX(-250deg);
-   }
-   22% {
-
-   	 margin-left: 3%;
-   		    -webkit-transform: rotateX(-280deg);
-          transform: rotateX(-280deg);
-   }
-  28% {
-    margin-left: 0%;
-    	  -webkit-transform: rotateX(-300deg);
-          transform: rotateX(-300deg);
-     }
-  35% {
-  	margin-left: 3.5%;
-  	  -webkit-transform: rotateX(-310deg);
-          transform: rotateX(-310deg);
-  }
-  48% {
-    margin-left: 1%;
-     -webkit-transform: rotateX(-350deg);
-          transform: rotateX(-350deg);
-     }
-   58% {
-   	margin-left: 3.5%;
-   	 -webkit-transform: rotateX(-310deg);
-          transform: rotateX(-310deg);
-   }
-   70%{
-   		margin-left: 0.5%;
-   	   	 -webkit-transform: rotateX(-280deg);
-          transform: rotateX(-280deg);
-   }
-  83% {
-    margin-left: -2%;
-     -webkit-transform: rotateX(-230deg);
-          transform: rotateX(-230deg);
+.modal__dialog {
+  max-width: 600px;
+  padding: 1.2rem;
 }
-  95% {
-
-    margin-left: 2%;
-  -webkit-transform: rotateX(-200deg);
-          transform: rotateX(-200deg);
-     }
-
-
-
-  100% {
-    margin-left: 3%;
-    top: 67%; } 
+.modal__content {
+  will-change: transform, opacity;
+  position: relative;
+  padding: 2.4rem;
+  background: #2b3033;
+  background-clip: padding-box;
+  box-shadow: 0 12px 15px 0 rgba(0,0,0,0.25);
+  opacity: 0;
+  -webkit-transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+  color:white;
 }
-
-
-
-
-
-span.billsBillsBills {
-  padding: 5px;
-  display: block;
+.modal__content--active {
+  opacity: 1;
+}
+.modal__close {
+  z-index: 1100;
+  cursor: pointer;
+}
+.modal__trigger {
+  position: relative;
+  display: inline-block;
+  padding: 1.2rem 2.4rem;
+  color: white;
+  line-height: 1;
+  cursor: pointer;
+  background: #2b3033;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.26);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.modal__trigger--active {
+  z-index: 10;
+}
+.modal__trigger:hover {
+  background: #272b2e;
+}
+#modal__temp {
+  will-change: transform, opacity;
   position: absolute;
-  z-index: 100;
-  -webkit-animation: sway 30s ease-out;
-  animation: sway 30s ease-out;
-   }
-.button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2b3033;
+  -webkit-transform: none;
+          transform: none;
+  opacity: 1;
+  -webkit-transition: opacity 0.1s ease-out, -webkit-transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.1s ease-out, -webkit-transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.1s ease-out, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: opacity 0.1s ease-out, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
-.button:focus {
-    background-color:#4caf50;
+.demo-btns .modal__trigger {
+  margin-right: 3px;
 }
-.button2:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+@media (max-width: 640px) {
+  .demo-btns .modal__trigger {
+    margin-bottom: 0.8rem;
+  }
 }
-#slide1, #slide2, #slide3 {
-margin-left: 50%;
-transform: translateX(-50%);
-min-width: 100%; 
-min-height: 100%;
+.demo-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 1.2rem;
+  padding: 0.6rem;
+  background: rgba(0,0,0,0.3);
+  border-radius: 50%;
+  -webkit-transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.demo-close svg {
+  width: 24px;
+  fill: #fff;
+  pointer-events: none;
+  vertical-align: top;
+}
+.demo-close:hover {
+  background: rgba(0,0,0,0.6);
+}
+.modala:link {
+  color: white;
+}
+.modala:visited {
+  color: white;
+}
+.modala:hover {
+  color: white;
+}
+.modala:active {
+  color: white;
 }
 </style>
+<div class="demo-btns logo" style="bottom: 1vh; right: 1vh;">
+		<div class="info">
+			<div class="buttons">
+				<p>
+					<a data-modal="#modal" class="modal__trigger">Contact</a>
 
-<div id="sponsorship" class="container-fluid" style="overflow: hidden;" style="color: white">
-  <h1 style="color: white; font-size: 36px; margin: 0px; margin-top: 20px; margin-bottom: 10px;">Sponsorship</h1>
-  <p style="color: white">The success of Rice Ravens FTC Team is dependent on the contributions from generous donors and sponsors. A investment is highly benifical to the team and is supporting a cause that we believe in.<b> Sponsorships help us to buy materials and parts</b>.<br>
-  We are seeking sponsorships and donations from several entities and private citizens. See the sponsorship packet to learn more about how you can support and sponsor out team.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div id="modal" class="modal modal__bg" role="dialog" aria-hidden="true">
+		<div class="modal__dialog">
+			<div class="modal__content">
+				<h1>Contact Us</h1>
+				<p>We are based in Plano, Texas. We can be found at <a class="modala" href="https://www.google.com/maps/place/Rice+Middle+School/@33.0934219,-96.7621271,17z/data=!3m1!4b1!4m5!3m4!1s0x864c3d4359213b13:0xcad1355d9450d13f!8m2!3d33.0934219!4d-96.7599384">Rice Middle School</a>, which is at 8500 Gifford Dr, Plano, TX 75025.
+Our email is <a class="modala" onclick="window.location.href='mailto:address@dmail.com';" href="">address@gmail.com</a></p>
+				
+				<!-- modal close button -->
+				<a href="" class="modal__close demo-close">
+					<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"/><path d="M0 0h24v24h-24z" fill="none"/></svg>
+				</a>
+				
+			</div>
+		</div>
+	</div>
+<section class="panel b-yellow parallex" id="2" style="background-image: url('images/Back2.jpg'); color: white;">
+  <article class="panel__wrapper">
+    <div class="panel__content">
+      <h1 class="panel__headline">Who are we and what do we do?</h1>
+      <div class="panel__block" style="background: white;"></div>
+      <p style="color:white;">FTC, or First Tech Challenge, is a program that has, for almost a quarter of a century, inspired youth from across the world to pursue careers in the fields of science, engineering, and technology, through robotics competitions. These competitions force teens to find unique and innovative ways to solve problems that arise from a number of different challenges.
+<br><br>We at Rice Middle School formed a FTC team in hope that we would learn and experience hands-on STEM and engineering.
 </p>
-  
-  <button id="button" class="waves-effect waves-light button button2">Click Me for Animation</button>
-
-  <p style="color: white">Our success thus far could not have been possible without the help of our sponsors below</p>
-<br><br><br>
-<img src="images/dell.png" style="width:50%; height: auto; background-color: '';"></img><br><br>
-<img src="images/google.png" style="width:50%; height: auto;"></img>
-</div>
-
-
-
-<div id="slideshow" class="container-fluid" style="overflow: hidden; position: absolute; width:100%; padding-left: 0px; margin: 0px; z-index: -1;">
-<img id="slide1" />
-<img id="slide2" />
-<img id="slide3" />
-</div>
-
-
-
-
-
-<div id="photos" class="container-fluid" style="overflow: hidden;">
-
-
-
-    <div class="container" style="width: 100%;">
-
-  <div class="modal fade" id="myModal" role="dialog" style="width: 75%; padding: 0px; visibility: hidden; max-height: 100%;">
-    <div class="modal-dialog" style="width: 100%; padding: 0px; visibility: visible;">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Closeup</h4>
-        </div>
-        <div class="modal-body">
-          <center><img id="galleryimg" src="" style="width: auto; max-width: 75%; height: auto;"></img></center>
-        </div>
-        <div class="modal-footer" style="background-color: white">
-          <div type="button" class="waves-effect waves-light button button2" data-dismiss="modal">Close</div>
-        </div>
-      </div>
-      
     </div>
-  </div>
+  </article>
+</section>
+<section class="panel b-red parallex" id="3" style="background-image: url('images/Gallery2.jpg'); color: white !important;">
+  <article class="panel__wrapper">
+    <div class="panel__content">
+      <h1 class="panel__headline">Members</h1>
+      <div class="panel__block" style="background: white;"></div>
+      <p style="color:white;">Our team is very devoted to FTC; we spend over a hundred hours just during meeting this school year.
+Our team members listed below have all help this team greatly in many ways.
+</p>
 
-
-  <div class="modal fade" id="myModal2" role="dialog" style="width: 75%; padding: 0px; visibility: hidden; max-height: 100%;">
-    <div class="modal-dialog" style="width: 100%; padding: 0px; visibility: visible;">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Closeup</h4>
-        </div>
-        <div class="modal-body">
-          <center><video style="width: auto;" class="responsive-video" controls><source id="videosrc" src="" id="galleryimg"></source></video></center>
-        </div>
-        <div class="modal-footer" style="background-color: white">
-          <button type="button" class="waves-effect waves-light button button2" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
+<div class="div">
+<ul class="ul">
+<li class="li"><a class="a" href="members.html?data=1">Abinav Damera</a></li>
+<li class="li"><a class="a" href="members.html?data=2">Yashvini Deva</a></li>
+<li class="li"><a class="a" href="members.html?data=3">Josh Grifilo</a></li>
+<li class="li"><a class="a" href="members.html?data=4">Subiksha Jayakumar</a></li>
+<li class="li"><a class="a" href="members.html?data=5">Carol King</a></li>
+<li class="li"><a class="a" href="members.html?data=6">Jahnavi Lanka</a></li>
+<li class="li"><a class="a" href="members.html?data=7">Suchita Mamindla</a></li>
+<li class="li"><a class="a" href="members.html?data=8">Hunter Ogden</a></li>
+<li class="li"><a class="a" href="members.html?data=9">Mathew Padavil</a></li>
+<li class="li"><a class="a" href="members.html?data=10">Pranav Pattatathunaduvil</a></li>
+<li class="li"><a class="a" href="members.html?data=11">Rishmita Rao</a></li>
+<li class="li"><a class="a" href="members.html?data=12">Susmita Renjith</a></li>
+<li class="li"><a class="a" href="members.html?data=13">Rachael Thompson</a></li>
+<li class="li"><a class="a" href="members.html?data=14">Shining Xi</a></li>
+</ul>
+</div>
     </div>
-  </div>
-
-        <div class="row" style="overflow:hidden;">
-
-            <div class="col-lg-12">
-
-                <h1 class="page-header" style="font-size: 36px;">Gallery</h1>
-		<p>Over the course of our team, we took many photos and videos to remember our experiences</p>
-                <p>Videos can be found on our youtube channel, <a href="https://www.youtube.com/channel/UCkxa9w-kGn4Z9GjPIIhufYQ">https://www.youtube.com/channel/UCkxa9w-kGn4Z9GjPIIhufYQ</a>.
-
-            </div>
-
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-
-                <a class="thumbnail" data-target="#myModal" id="firstphoto" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery1.jpg'">
-
-                    <img class="img-responsive" src="images/thumb/Gallery1.jpg" style="max-height: 100%; width: auto !important;"></img>
-
-                </a>
-
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-
-                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery2.jpg'">
-
-                    <img class="img-responsive" src="images/thumb/Gallery2.jpg" style="height: 100% !important; width: auto !important;" alt="">
-
-                </a>
-
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-
-                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery3.jpg'">
-
-                    <img class="img-responsive" src="images/thumb/Gallery3.jpg" style="height: 100% !important; width: auto !important;" alt="">
-
-                </a>
-
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-
-                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery4.jpg'">
-
-                    <img class="img-responsive" src="images/thumb/Gallery4.jpg" style="height: 100% !important; width: auto !important;" alt="">
-
-                </a>
-
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-
-                <a class="thumbnail" data-target="#myModal2" data-toggle="modal" onclick="document.getElementById('videosrc').src='images/Gallery5.mp4'">
-
-                    <img class="img-responsive" src="images/thumb/Gallery5.jpg" style="height: 100% !important; width: auto !important;" alt="">
-
-                </a>
-
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-
-                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery4.jpg'">
-
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-
-                </a>
-
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-
-                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery4.jpg'">
-
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-
-                </a>
-
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-
-                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery4.jpg'">
-
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-
-                </a>
-
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-
-                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery4.jpg'">
-
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-
-                </a>
-
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-
-                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery4.jpg'">
-
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-
-                </a>
-
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-
-                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery4.jpg'">
-
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-
-                </a>
-
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6 thumb" id="lastphoto">
-
-                <a class="thumbnail" data-target="#myModal" data-toggle="modal" onclick="document.getElementById('galleryimg').src='images/Gallery4.jpg'">
-
-                    <img class="img-responsive" src="http://placehold.it/400x300" alt="">
-
-                </a>
-
-            </div>
-
-</div></div></div>
-
-
-<div id="contact" class="container-fluid" style="y-overflow: hidden;">
-<span style="position: absolute; z-index:1; padding: 0px; margin: 0px; overflow: hidden; right: 15px; border-style: solid; border-width: 5px; border-radius: 8px;" class="panel panel-default">
-<div class="panel-body" style="overflow: hidden">
-  <h1>Contact</h1>
-  <p>If you have any questions, queries, doubts, or comments, don't hesitate to contact us.</p>
-
-
-					<span class="unneeded"><br><br></span>
-					ananthvivekanand.gtihub.io/RiceRavens/
-					<br><span class="unneeded"><br></span>
-					ouremail@gmail.com
-					<br><span class="unneeded"><br></span>
-					Rice FTC Robotics		<br>
-					Mr. McCarthy		<br>
-					8500 Gifford Dr 		<br>
-					Rice Middle School 	<br>
-					Plano, TX 75025
-</div>
-</span>
-<iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3342.5956139772156!2d-96.76212708386455!3d33.09342188087762!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c3d4359213b13%3A0xcad1355d9450d13f!2sRice+Middle+School!5e0!3m2!1sen!2sus!4v1488820024634" frameborder="0" style="border: 0; width:100%; position: absolute;" allowfullscreen></iframe>
-</div>
-
-
-
-
-</div>
-
-  <script>
-!function(a,b,c){"undefined"!=typeof module&&module.exports?module.exports=c():a[b]=c()}(this,"verge",function(){function a(){return{width:k(),height:l()}}function b(a,b){var c={};return b=+b||0,c.width=(c.right=a.right+b)-(c.left=a.left-b),c.height=(c.bottom=a.bottom+b)-(c.top=a.top-b),c}function c(a,c){return a=a&&!a.nodeType?a[0]:a,a&&1===a.nodeType?b(a.getBoundingClientRect(),c):!1}function d(b){b=null==b?a():1===b.nodeType?c(b):b;var d=b.height,e=b.width;return d="function"==typeof d?d.call(b):d,e="function"==typeof e?e.call(b):e,e/d}var e={},f="undefined"!=typeof window&&window,g="undefined"!=typeof document&&document,h=g&&g.documentElement,i=f.matchMedia||f.msMatchMedia,j=i?function(a){return!!i.call(f,a).matches}:function(){return!1},k=e.viewportW=function(){var a=h.clientWidth,b=f.innerWidth;return b>a?b:a},l=e.viewportH=function(){var a=h.clientHeight,b=f.innerHeight;return b>a?b:a};return e.mq=j,e.matchMedia=i?function(){return i.apply(f,arguments)}:function(){return{}},e.viewport=a,e.scrollX=function(){return f.pageXOffset||h.scrollLeft},e.scrollY=function(){return f.pageYOffset||h.scrollTop},e.rectangle=c,e.aspect=d,e.inX=function(a,b){var d=c(a,b);return!!d&&d.right>=0&&d.left<=k()},e.inY=function(a,b){var d=c(a,b);return!!d&&d.bottom>=0&&d.top<=l()},e.inViewport=function(a,b){var d=c(a,b);return!!d&&d.bottom>=0&&d.right>=0&&d.top<=l()&&d.left<=k()},e});
-</script>
-
-<script>
-var hig = verge.viewportH() - document.getElementById("totalnav").offsetHeight;
-document.getElementById("wrapper").style.height = (hig * 11) + "px";
-document.getElementById("home").style.height = hig + "px";
-document.getElementById("who").style.height = hig * 2 + "px";
-document.getElementById("members").style.height = hig * 2 + "px";
-document.getElementById("sponsorship").style.height = hig * 2 + "px";
-document.getElementById("photos").style.height = hig * 2 + "px";
-document.getElementById("contact").style.height = hig * 2 + "px";
-document.getElementById("heighter").style.height = document.getElementById("totalnav").offsetHeight + "px";
-document.getElementById("map").style.height = (hig) + "px";
-document.getElementById("map").style.top = (((hig) * 10) + document.getElementById("totalnav").offsetHeight) + "px";
-document.getElementById("map").style.left = "0px";
-document.getElementById("slideshow").style.height = hig * 2 + "px";
-document.getElementById("slideshow").style.top = (((hig) * 5) + document.getElementById("totalnav").offsetHeight) + "px";
-document.getElementById("slideshow").style.left = "0px";
-
-
-window.addEventListener('resize', function(event){
-var hig = verge.viewportH() - document.getElementById("totalnav").offsetHeight;
-document.getElementById("wrapper").style.height = (hig * 11) + "px";
-document.getElementById("home").style.height = hig + "px";
-document.getElementById("slider2").style.height = (document.documentElement.clientHeight) + "px";
-document.getElementById("who").style.height = hig * 2 + "px";
-document.getElementById("members").style.height = hig * 2 + "px";
-document.getElementById("sponsorship").style.height = hig * 2 + "px";
-document.getElementById("photos").style.height = hig * 2 + "px";
-document.getElementById("contact").style.height = hig * 2 + "px";
-document.getElementById("heighter").style.height = document.getElementById("totalnav").offsetHeight + "px";
-document.getElementById("map").style.height = (hig) + "px";
-document.getElementById("map").style.top = (((hig) * 10) + document.getElementById("totalnav").offsetHeight) + "px";
-document.getElementById("map").style.left = "0px";
-document.getElementById("slideshow").style.height = hig * 2 + "px";
-document.getElementById("slideshow").style.top = (((hig) * 5) + document.getElementById("totalnav").offsetHeight) + "px";
-document.getElementById("slideshow").style.left = "0px";
-
-
-});
+  </article>
+</section>
+<style>
+.div {
+  width: 400px;
+}
+
+.h2 {
+  font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.li {
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+
+.li:last-child {
+  border: none;
+}
+
+.li .a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  width: 400px;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+.li .a:hover {
+  font-size: 30px;
+  background: #f6f6f6;
+  color: black;
+}
+</style>
+<section class="panel b-green parallex" id="4" style="background-image: url('images/robot.png'); color: white !important;">
+  <article class="panel__wrapper">
+    <div class="panel__content">
+      <h1 class="panel__headline">Meet the robot</h1>
+      <div class="panel__block" style="background: white;"></div>
+      <p style="color:white;">Our robot was built, destroyed, built, destroyed, and built again. Every time we attended a 
+FTC match, we got new ideas and improved our robot. Most of our parts were bought from AndyMark, although in the final stage of the robot,
+we used VEX parts to create a shell for the robot.</p>
+    </div>
+  </article>
+</section>
+<section class="panel" id="5">
+
+
+<iframe src="events.html" style="width:100%; height:100%;" id="5child"></iframe> 
+
+
+</section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script>
+var menu = document.querySelector('.nav__list');
+var burger = document.querySelector('.burger');
+var doc = $(document);
+var l = $('.scrolly');
+var panel = $('.panel');
+var vh = $(window).height();
+
+var openMenu = function() {
+  burger.classList.toggle('burger--active');
+  menu.classList.toggle('nav__list--active');
+};
+
+// reveal content of first panel by default
+panel.eq(0).find('.panel__content').addClass('panel__content--active');
+
+var scrollFx = function() {
+  var ds = doc.scrollTop();
+  var of = vh / 4;
   
+  // if the panel is in the viewport, reveal the content, if not, hide it.
+  for (var i = 0; i < panel.length; i++) {
+    if (panel.eq(i).offset().top < ds+of) {
+     panel
+       .eq(i)
+       .find('.panel__content')
+       .addClass('panel__content--active');
+    } else {
+      panel
+        .eq(i)
+        .find('.panel__content')
+        .removeClass('panel__content--active')
+    }
+  }
+};
 
+var scrolly = function(e) {
+  e.preventDefault();
+  var target = this.hash;
+  var $target = $(target);
+
+  $('html, body').stop().animate({
+      'scrollTop': $target.offset().top
+  }, 300, 'swing', function () {
+      window.location.hash = target;
+  });
+}
+
+var init = function() {
+  burger.addEventListener('click', openMenu, false);
+  window.addEventListener('scroll', scrollFx, false);
+  window.addEventListener('load', scrollFx, false);
+  $('a[href^="#"]').on('click',scrolly);
+};
+
+doc.on('ready', init);
+document.getElementById("5child").style.height = $(window).height() + "px";
 </script>
 <script>
-      $('.slider').slider();
+var Modal = (function() {
+
+  var trigger = $qsa('.modal__trigger'); // what you click to activate the modal
+  var modals = $qsa('.modal'); // the entire modal (takes up entire window)
+  var modalsbg = $qsa('.modal__bg'); // the entire modal (takes up entire window)
+  var content = $qsa('.modal__content'); // the inner content of the modal
+	var closers = $qsa('.modal__close'); // an element used to close the modal
+  var w = window;
+  var isOpen = false;
+	var contentDelay = 400; // duration after you click the button and wait for the content to show
+  var len = trigger.length;
+
+  // make it easier for yourself by not having to type as much to select an element
+  function $qsa(el) {
+    return document.querySelectorAll(el);
+  }
+
+  var getId = function(event) {
+
+    event.preventDefault();
+    var self = this;
+    // get the value of the data-modal attribute from the button
+    var modalId = self.dataset.modal;
+    var len = modalId.length;
+    // remove the '#' from the string
+    var modalIdTrimmed = modalId.substring(1, len);
+    // select the modal we want to activate
+    var modal = document.getElementById(modalIdTrimmed);
+    // execute function that creates the temporary expanding div
+    makeDiv(self, modal);
+  };
+
+  var makeDiv = function(self, modal) {
+
+    var fakediv = document.getElementById('modal__temp');
+
+    /**
+     * if there isn't a 'fakediv', create one and append it to the button that was
+     * clicked. after that execute the function 'moveTrig' which handles the animations.
+     */
+
+    if (fakediv === null) {
+      var div = document.createElement('div');
+      div.id = 'modal__temp';
+      self.appendChild(div);
+      moveTrig(self, modal, div);
+    }
+  };
+
+  var moveTrig = function(trig, modal, div) {
+    var trigProps = trig.getBoundingClientRect();
+    var m = modal;
+    var mProps = m.querySelector('.modal__content').getBoundingClientRect();
+    var transX, transY, scaleX, scaleY;
+    var xc = w.innerWidth / 2;
+    var yc = w.innerHeight / 2;
+
+    // this class increases z-index value so the button goes overtop the other buttons
+    trig.classList.add('modal__trigger--active');
+
+    // these values are used for scale the temporary div to the same size as the modal
+    scaleX = mProps.width / trigProps.width;
+    scaleY = mProps.height / trigProps.height;
+
+    scaleX = scaleX.toFixed(3); // round to 3 decimal places
+    scaleY = scaleY.toFixed(3);
+
+
+    // these values are used to move the button to the center of the window
+    transX = Math.round(xc - trigProps.left - trigProps.width / 2);
+    transY = Math.round(yc - trigProps.top - trigProps.height / 2);
+
+		// if the modal is aligned to the top then move the button to the center-y of the modal instead of the window
+    if (m.classList.contains('modal--align-top')) {
+      transY = Math.round(mProps.height / 2 + mProps.top - trigProps.top - trigProps.height / 2);
+    }
+
+
+		// translate button to center of screen
+		trig.style.transform = 'translate(' + transX + 'px, ' + transY + 'px)';
+		trig.style.webkitTransform = 'translate(' + transX + 'px, ' + transY + 'px)';
+		// expand temporary div to the same size as the modal
+		div.style.transform = 'scale(' + scaleX + ',' + scaleY + ')';
+		div.style.webkitTransform = 'scale(' + scaleX + ',' + scaleY + ')';
+
+
+		window.setTimeout(function() {
+			window.requestAnimationFrame(function() {
+				open(m, div);
+			});
+		}, contentDelay);
+
+  };
+
+  var open = function(m, div) {
+
+    if (!isOpen) {
+      // select the content inside the modal
+      var content = m.querySelector('.modal__content');
+      // reveal the modal
+      m.classList.add('modal--active');
+      // reveal the modal content
+      content.classList.add('modal__content--active');
+
+      /**
+       * when the modal content is finished transitioning, fadeout the temporary
+       * expanding div so when the window resizes it isn't visible ( it doesn't
+       * move with the window).
+       */
+
+      content.addEventListener('transitionend', hideDiv, false);
+
+      isOpen = true;
+    }
+
+    function hideDiv() {
+      // fadeout div so that it can't be seen when the window is resized
+      div.style.opacity = '0';
+      content.removeEventListener('transitionend', hideDiv, false);
+    }
+  };
+
+  var close = function(event) {
+
+		event.preventDefault();
+    event.stopImmediatePropagation();
+
+    var target = event.target;
+    var div = document.getElementById('modal__temp');
+
+    /**
+     * make sure the modal__bg or modal__close was clicked, we don't want to be able to click
+     * inside the modal and have it close.
+     */
+
+    if (isOpen && target.classList.contains('modal__bg') || target.classList.contains('modal__close')) {
+
+      // make the hidden div visible again and remove the transforms so it scales back to its original size
+      div.style.opacity = '1';
+      div.removeAttribute('style');
+
+			/**
+			* iterate through the modals and modal contents and triggers to remove their active classes.
+      * remove the inline css from the trigger to move it back into its original position.
+			*/
+
+			for (var i = 0; i < len; i++) {
+				modals[i].classList.remove('modal--active');
+				content[i].classList.remove('modal__content--active');
+				trigger[i].style.transform = 'none';
+        trigger[i].style.webkitTransform = 'none';
+				trigger[i].classList.remove('modal__trigger--active');
+			}
+
+      // when the temporary div is opacity:1 again, we want to remove it from the dom
+			div.addEventListener('transitionend', removeDiv, false);
+
+      isOpen = false;
+
+    }
+
+    function removeDiv() {
+      setTimeout(function() {
+        window.requestAnimationFrame(function() {
+          // remove the temp div from the dom with a slight delay so the animation looks good
+          div.remove();
+        });
+      }, contentDelay - 50);
+    }
+
+  };
+
+  var bindActions = function() {
+    for (var i = 0; i < len; i++) {
+      trigger[i].addEventListener('click', getId, false);
+      closers[i].addEventListener('click', close, false);
+      modalsbg[i].addEventListener('click', close, false);
+    }
+  };
+
+  var init = function() {
+    bindActions();
+  };
+
+  return {
+    init: init
+  };
+
+}());
+
+Modal.init();
 </script>
- <script src="js/1.js" async></script>
- <script src="js/2.js" async></script>
- <script src="js/3.js" async></script>
- <script src="js/4.js" async></script>
-<script>
-function changePerson(index, elem) {
-switch (index) {
-	case 0:
-		name = "Saturday";
-		break;
-	case 1:
-		name = "Monday";
-		break;
-	case 2:
-		name = "Tuesday";
-		break;
-	case 3:
-		name = "Wednesday";
-		break;
-	case 4:
-		name = "Thursday";
-		break;
-	case 5:
-		name = "Friday";
-		break;
-	case 6:
-		name = "Saturday";
-}
-document.getElementById("name").innerHTML = name;
-}
-      $('.carousel').carousel({
-            dist:-50,
-            shift:0,
-            padding:100,
-	onCycleTo: function (ele, dragged) {
-		changePerson($(ele).index(), ele);
-	}
-
-      });
-</script>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-        <footer class="page-footer" style="padding-top: 60px; background-color:#2196F3;">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Rice Ravens FTC Team</h5>
-                <p class="grey-text text-lighten-4">This website was made for us to have a web presence and make ourself known. GO RAVENS!</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="http://pisd.edu/schools/secondary/rice/index.shtml">Rice Middle School</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright" style="background-color:#1976D2;">
-            <div class="container">
-&copy; 2017 Anti-Copyright Rice Middle School
-            <a class="grey-text text-lighten-4 right" href="https://github.com/AnanthVivekanand/RiceRavens">Code for website (Click)</a>
-            </div>
-          </div>
-        </footer>
-
-
-
 </body>
 </html>
-

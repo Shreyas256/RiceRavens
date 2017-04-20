@@ -1,0 +1,31 @@
+<!Doctype html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+</head>
+<body style="y-overflow: scroll;">
+
+<div id="fullscreen" class="parallax" style="background-image: url('images/Gallery1.jpg');">HI</div>
+<br>
+<script>
+document.getElementById("fullscreen").style.height = $( window ).height() + "px";
+</script>
+<style>
+.parallax {
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+</style>
+<div id="restofpage" style="position:absolute">
+<div>Hi</div>
+</div>
+<script>
+document.getElementById("restofpage").style.top = $( window ).height() + "px";
+</script>
+</body>
+</html>
